@@ -88,3 +88,28 @@
 
 **Dejar de hacer:**
 - Tareas a ultimo momento.
+
+# Sprint 5: Retro
+
+**Empezar a hacer:**
+
+- Dar prioridad a los trabajos entregables del proyecto.
+- Respetar la fecha y horario de las reuniones programadas.
+- Entrga en tiempo y forma de sprint
+
+**Hacer mas:**
+
+- Ayudarnos mutuamente. 
+- Reuniones recurrentes.
+- Mas comunicación con el otro interante del equipo.
+ 
+
+**Seguir haciendo:**
+
+- Trabajo en equipo.  
+- Reuniones programadas.
+-
+
+**Dejar de hacer:**
+- Tareas a ultimo momento.
+- Frustrarse ante los problemas.
