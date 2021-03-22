@@ -1,11 +1,90 @@
-# Sprint1: Retrospectiva (Starfish retrospective)
+# Sprint 1: Retro
 
-**Para tener en cuenta:**
+**Empezar a hacer:**
 
-- Mas compromiso con las tareas asignadas
-- Avisar cualquier tipo de inconveniente o duda sobre el proyecto.
-- Delegar a una persona para la revision de las tareas (trello).
+- Interactuar con el equipo
+- Avisar ante ausencias,problemas particulares o se se presenta algun impedimento.
+- Dividir tareas.
+- Retrospectivas al final de cada sprint.
 
 **Hacer mas:**
 
-- Reuniones para informar avances o problemas del proyecto.
+- Seguimiento a Trello, para trabajar la comunicación.
+- Comunicación diaria de los avances o problemas que surgen.
+- Mejor planificación en asignacion de tareas.
+
+**Seguir haciendo:**
+
+- Reuniones por zoom para asignación de tareas.
+- Comunicación con el equipo.
+
+**Dejar de hacer:**
+
+- Reuniones por zoom extensas.
+- Atrasar reuniones en las asignaciónes de tareas.
+
+**Hacer menos:**
+
+- Lo justo para el sprint.
+- Dejar tareas asignadas para ultimo momento.
+
+# Sprint 2: Retro
+
+**Empezar a hacer:**
+
+- Avisar sobre la disponibilidad en los horarios.
+
+**Hacer mas:**
+
+- Reuniones.
+- BrainStorm (lluvia de ideas).
+
+**Seguir haciendo:**
+
+- Buscar referencias.
+- Mini-reuniones.
+- Distrubución de tareas.
+
+**Hacer menos:** 
+- Dejar de faltar a clases. 
+
+**Dejar de hacer:**
+
+# Sprint 3: Retro
+
+**Empezar a hacer:**
+
+- Prestar más atención en detalles e implementar las buenas practicas. 
+- Ponerse al día con clases y la ejercitación en el PlayGround. 
+
+**Hacer mas:**
+
+- Ayudar a los integrantes del equipo con sus dificultades. 
+
+**Seguir haciendo:**
+
+- Trabajo en equipo.  
+
+**Dejar de hacer:**
+- Tareas a ultimo momento.
+
+# Sprint 4: Retro
+
+**Empezar a hacer:**
+
+- Implementar el uso de ramas en github.
+- Respetar la fecha y horario de las reuniones programadas.
+
+**Hacer mas:**
+
+- Ayudar a los integrantes del equipo con sus dificultades. 
+- Reuniones recurrentes.
+- Tener mas empatia cuando se presentan problemas.
+
+**Seguir haciendo:**
+
+- Trabajo en equipo.  
+- Reuniones programadas.
+
+**Dejar de hacer:**
+- Tareas a ultimo momento.
