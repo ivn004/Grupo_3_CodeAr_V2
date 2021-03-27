@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- HEAD -->
+<%- include("../partials/head.ejs") %>
+  <!-- HEAD -->
+
+  <body>
+    <!-- HEADER -->
+    <%- include("../partials/header.ejs") %>
+      <!-- HEADER -->
+      <div class="perfil container-fluid row">
+        <form action="/users/update?_method=PUT"method="POST">
+          <div class="bienvenido-user col-12">
+            <img src="/images/avatares/<%= usuario.avatar %> " alt="">
+            <input type="file" name="avatar">
+            <h1>Edita tus Datos, <%= usuario.nombre %>
+            </h1>
+            <p>Administra tu información y las opciones de privacidad y seguridad a fin de que Codear sea más relevante
+              para
+              ti.</p>
+          </div>
+          <div class="datos-user">
+            <h2>Edición de datos</h2>
+            <h3>Datos de Cuenta</h3>
+            <div class="cajaUser row">
+              <h3 class="col-5">Usuario</h3>
+              <input class="col-5" type="text" name="nombreUsuario" value="<%= usuario.nombre %>"></input>
+            </div>
+            <div class="cajaUser row">
+              <h3 class="col-5">E-mail</h3>
+              <input class="col-5" type="email" name="email" value="<%= usuario.email %>"></input>
+            </div>
+           <!--  <div class="cajaUser row">
+              <h3 class="col-5">Clave</h3>
+              <input class="col-5" type="password" name="pass" value="<%= /* usuario.password  */%>"></input>
+            </div> -->
+            <h3>Datos Personales</h3>
+
+
+
+            <div class="cajaUser row">
+              <h3 class="col-5">Telefono</h3>
+              <input class="col-5" type="number" name="telefonoPerfil" value="<%= usuario.telefono %>"></input>
+            </div>
+          </div>
+          <button type="submit">GUARDAR CAMBIOS</button>
+        </form>
+      </div>
+      <!-- FOOTER -->
+      <%- include("../partials/footer") %>
+        <!-- FOOTER -->
+
+  </body>
+
+</html>
