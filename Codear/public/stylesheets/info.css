@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+:root {
+  --negroCODE: #020202;
+  --celesteCODE: #308999;
+  --gray: #666666;
+  --fondo: #ebebeb;
+  --naranja: #DB4C0B;
+  --whatsapp: #20B038;
+  --fuente-base: 'Ubuntu', sans-serif;
+}
+
+/* Basics */
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+strong {
+  font-weight: 600;
+}
+
+
+/* QUIEN SOY */
+
+.equipoInfo {
+  margin: 20px;
+}
+
+.container-equipo>h1 {
+  font-size: 40px;
+  font-weight: 600;
+  border-bottom: 5px solid var(--negroCODE);
+  margin: 20px;
+  font-family: anton;
+}
+
+.equipoInfo h2 {
+  font-size: 70px;
+  font-family: anton;
+  text-transform: uppercase;
+}
+
+.equipoInfo h3 {
+  font-size: 30px;
+  text-transform: uppercase;
+  font-family: anton;
+  color: var(--naranja);
+}
+
+.equipoInfo .imgInfo {
+  width: 150px;
+  height: 300px;
+  background-image: url("/images/matias.jpg");
+  background-size: 100%;
+}
+
+.equipoInfo p {
+  font-size: 16px;
+}
+
+.equipoInfo span {
+  font-weight: 600;
+}
+
+/* HABILIDADES */
+.habilidades {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.progress {
+  width: 100%;
+  background: rgb(187, 186, 186);
+  border-radius: 0 50px 50px 0;
+  margin: 10px 0px;
+  height: 30px;
+  padding: 0;
+  -webkit-border-radius: 0 50px 50px 0;
+  -moz-border-radius: 0 50px 50px 0;
+  -ms-border-radius: 0 50px 50px 0;
+  -o-border-radius: 0 50px 50px 0;
+}
+
+.progress-bar {
+  font-size: 16px;
+  text-align: left;
+  padding: 10px;
+  margin: 0;
+  background: var(--celesteCODE);
+  border-right: 5px solid var(--naranja);
+  font-weight: 600;
+}
+
+.habilidades p {
+  font-weight: 600;
+  font-size: 20px;
+}
+
+/* CONTAINER EMPRESA */
+.container-empresa {
+  background: white;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 30px;
+}
+
+.container-fluid {
+  border: none;
+}
+
+.infoEmpresa {
+  font-size: 16px;
+}
+
+.infoEmpresa a {
+  text-decoration: underline;
+  text-shadow: var(--negroCODE);
+}
+
+.btn-empresa {
+  font-size: 20px;
+  background: var(--celesteCODE);
+  font-weight: 600;
+  color: var(--fondo);
+}
+
+.ivanMatiImg {
+  width: 700px;
+}
+
+/* PROFESORES */
+.container-profesores {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--negroCODE);
+  border: none;
+}
+
+.convertiteEnProfesor {
+  margin: 20px;
+  padding: 20px;
+  background-color: var(--naranja);
+  color: #fff;
+  border: none;
+  border-radius: none;
+  width: 70%;
+  text-transform: uppercase;
+  font-weight: 900;
+  text-align: center;
+  font-size: 30px;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.convertiteEnProfesor:hover {
+  background-color: var(--celesteCODE);
+  box-shadow: 0 0 10px 0 var(--negroCODE);
+  border-radius: none;
+  border: none;
+}
+
+/* TESTIMONIO */
+.container-testimonios{
+  background-image: url("/images/fondoestrellas.jpg") ;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 200px;
+}

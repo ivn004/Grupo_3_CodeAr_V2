@@ -9,7 +9,6 @@
   --naranja: #DB4C0B;
   --whatsapp: #20B038;
   --fuente-base: 'Ubuntu', sans-serif;
-
 }
 
 ul,
@@ -20,7 +19,6 @@ ol {
 }
 
 a {
-  display: inline-block;
   text-decoration: none;
   color: inherit;
 }
@@ -38,8 +36,6 @@ input {
   font-family: inherit;
 }
 
-/* BANNER */
-/* BANNER */
 /* BANNER */
 .banner-home-xl{
   display: none;
@@ -172,24 +168,21 @@ input[id="3"]:checked~.pagination-slider-home .pagination-item-slider-home[for="
   }
 }
 /* BANNER */
-/* BANNER */
-/* BANNER */
 
 
-/* Recomendados */
-/* Recomendados */
-/* Recomendados */
-.products-wrapper {
+
+/* RECOMENDADOS */
+.container-destacados {
   padding: 60px 30px;
 }
 
-.products-title {
+.container-destacados .title {
   font-size: 4em;
   font-weight: 600;
   color: var(--gray);
 }
 
-.products-description {
+.container-destacados .description {
   font-size: 2.1em;
   font-weight: 400;
 }
@@ -220,6 +213,7 @@ input[id="3"]:checked~.pagination-slider-home .pagination-item-slider-home[for="
   background-color: var(--celesteCODE);
   font-size: 30px;
   border: none;
+  margin: auto;
 }
 
 .ver-mas:hover {
@@ -231,13 +225,10 @@ input[id="3"]:checked~.pagination-slider-home .pagination-item-slider-home[for="
   color: white;
   font-size: 30px;
 }
-/* Recomendados */
-/* Recomendados */
-/* Recomendados */
+/* /RECOMENDADOS */
 
 
-/* INFO CODEAR */
-/* INFO CODEAR */
+
 /* INFO CODEAR */
 .infoCodear {
   margin: auto;
@@ -263,6 +254,7 @@ input[id="3"]:checked~.pagination-slider-home .pagination-item-slider-home[for="
 .infoCodear .infoo {
   display: flex;
   align-items: center;
+  justify-content: center;
   font-size: 16px;
   width: 100%;
   margin: 10px 0;
@@ -277,40 +269,45 @@ input[id="3"]:checked~.pagination-slider-home .pagination-item-slider-home[for="
   font-size: 14px;
   color: #666666;
   padding: 0;
+  margin: 0;
 }
 
 .infoCodear .infoo i {
   text-align: center;
   color: var(--gray);
   font-size: 30px;
-  padding: 0;
+  padding: 0px;
+  margin: 0;
 }
 
 .infoCodear .infoo h3 {
   margin: 0;
 }
-/* INFO CODEAR */
-/* INFO CODEAR */
-/* INFO CODEAR */
+/* /INFO CODEAR */
+
+
 
 /* SELECCION AMPLIA */
-/* SELECCION AMPLIA */
-/* SELECCION AMPLIA */
-.seleccionAmplia {
+.container-seleccionAmplia {
   margin: 60px 0;
   padding: 0;
 }
 
-.seleccionAmplia>h1 {
+.container-seleccionAmplia>h1 {
   font-size: 50px;
+  padding:0 40px;
 }
 
-.seleccionAmplia p {
+.container-seleccionAmplia p {
   font-size: 20px;
+  padding: 0 40px;
+}
+
+.container-seleccionAmplia ul{
+  padding: 0 40px;
 }
 
 .selecciones-mas-amplias {
-  width: 100%;
   margin: 0;
   padding: 0;
 }
@@ -320,33 +317,29 @@ input[id="3"]:checked~.pagination-slider-home .pagination-item-slider-home[for="
   font-weight: 700;
 }
 
-.nav-tabs {
-  padding: 0px 10px;
-}
-
 /* SELECCIONES_PYTHON */
-.selecciones-python {
+.container-seleccionAmplia .selecciones {
   margin: 0;
-  padding: 0;
+  padding: 0 40px;
 }
 
-.selecciones-python h1 {
+.container-seleccionAmplia .selecciones h1 {
   font-size: 20px;
   padding: 5px 10px;
   margin: 0;
 }
 
-.selecciones-python p {
+.container-seleccionAmplia .selecciones p {
   font-size: 16px;
   padding: 5px 10px;
 }
 
-.selecciones-python div {
+.container-seleccionAmplia .selecciones div {
   margin: 0;
   padding: 0;
 }
 
-.selecciones-python>div>div {
+.container-seleccionAmplia .selecciones>div>div {
   margin: 0;
   padding: 20px;
 }

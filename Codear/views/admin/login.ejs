@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
 <!-- HEAD -->
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,23 +15,25 @@
 
   <!-- Own Stylesheet -->
   <link rel="stylesheet" href="/stylesheets/adminRegisterLogin.css" />
+	<link rel="stylesheet" href="/stylesheets/partials.css" />
 
   <!-- FUENTES -->
   <link rel="preconnect" href="https://fonts.gstatic.com" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
-    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet" />
 </head>
 <!-- HEAD -->
 
+<!-- Header -->
+	<%- include("../partials/header.ejs")  %>
+	<!-- /Header -->
+
 <body>
   <!-- login -->
-  <div class="container">
     <div class="row">
-      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+      <div class="col-sm-8 col-md-6 col-lg-4 mx-auto">
         <div class="card card-signin my-5">
           <div class="card-body">
-            <h5 class="card-title text-center">Iniciar Sesion</h5>
+            <h5 class="card-title text-center">Iniciar Sesión</h5>
 
 
             <form class="form-signin" action="" method="POST">
@@ -65,8 +66,8 @@
             
             <div>
               <p class="loginhere">
-                ¿No estás registrado? <a href="/users/register" class="loginhere-link">Registrate</a>
-                <a href="/" class="loginhere">Volver</a>
+                ¿No estás registrado? <a class="loginhereRegisterLogin" href="/users/register" class="loginhere-link">Registrate</a>
+                <a class="loginhereVolver" href="/" class="loginhere">Volver</a>
               </p>
                 <span class="text-danger"><%= (typeof errores != "undefined" && errores.error)? errores.error.msg : "" %> </span>
 
@@ -75,16 +76,15 @@
         </div>
       </div>
     </div>
-  </div>
   <!-- login -->
 
 
 
    
-  <!-- FOOTER -->
-  <%- include("partials/footer.ejs")  %>
-  <!-- FOOTER -->
+	<!-- FOOTER -->
+	<%- include("../partials/footer.ejs")  %>
+	<!-- FOOTER -->
 
 </body>
 
-</html>
+</html><!--  -->

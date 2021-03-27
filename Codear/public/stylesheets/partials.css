@@ -1,6 +1,6 @@
 /* Fonts */
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 /* Variables */
 :root {
   --negroCODE: #020202;
@@ -62,12 +62,15 @@ input {
 header {
   background-color: var(--negroCODE);
   width: 100%;
+  margin-bottom: -1px;
 }
 
 .container-fluid {
+  margin-top: -1px;
   margin: 0;
   padding: 0;
   width: 100%;
+  border: none;
 }
 
 /* NAV PRINCIPAL */
@@ -82,9 +85,9 @@ header {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-}
-/* LOGO */
+  border: none;
 
+}
 
 /* CURSOS */
 .curso-header {
@@ -147,8 +150,8 @@ ul.submenu-cursos {
   opacity: 1;
 }
 
-@media (max-width: 1000px){
-  .cursos-header{
+@media (max-width: 1000px) {
+  .cursos-header {
     display: none;
   }
 }
@@ -209,10 +212,10 @@ ul.submenu-cursos {
 }
 
 .ingresa h3,
-.ingresa img{
+.ingresa img {
   width: 100%;
   margin: 5px 0;
-  padding:0 5px;
+  padding: 0 5px;
   border-radius: 50%;
   text-align: center;
 }
@@ -222,20 +225,20 @@ ul.submenu {
   list-style: none;
 }
 
-.ingresa > li {
+.ingresa>li {
   /* position: relative; */
   display: inline-block;
   margin: 0;
   padding: 0;
 }
 
-.ingresa > li > a{
+.ingresa>li>a {
   display: block;
   padding: 15px 20px;
   text-decoration: none;
 }
 
-.cr:hover{
+.cr:hover {
   color: var(--naranja);
   transition: all .3s;
   font-weight: 800;
@@ -243,7 +246,7 @@ ul.submenu {
 
 /* subMENU */
 
-.submenu{
+.submenu {
   width: 150%;
   position: absolute;
   right: 0px;
@@ -254,19 +257,19 @@ ul.submenu {
   transition: opacity 1s;
 }
 
-.submenu li a{
+.submenu li a {
   display: block;
   padding: 15px;
   color: #020202;
   text-decoration: none;
 }
 
-.ingresa li:hover .submenu{
+.ingresa li:hover .submenu {
   visibility: visible;
   opacity: 1;
 }
 
-.perfil-header{
+.perfil-header {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -274,7 +277,7 @@ ul.submenu {
   margin: 0;
 }
 
-.perfil-header img{
+.perfil-header img {
   max-width: 50px;
 }
 
@@ -291,7 +294,7 @@ ul.submenu {
   color: white;
 }
 
-.i-carrito-hover i{
+.i-carrito-hover i {
   font-size: 30px;
   color: var(--naranja);
 }
@@ -299,13 +302,14 @@ ul.submenu {
 .i-carrito-hover a i:hover {
   color: var(--celesteCODE);
 }
-.iniciar-sesion{
+
+.iniciar-sesion {
   font-weight: 800;
 }
 
 
-@media (max-width:767px){
-  .submenu{
+@media (max-width:767px) {
+  .submenu {
     position: fixed;
     width: 100%;
   }
@@ -313,13 +317,17 @@ ul.submenu {
 
 
 /* FOOTER */
+/* FOOTER */
+/* FOOTER */
+/* FOOTER */
+/* FOOTER */
 
-/* Footer */
 footer {
   background-color: var(--negroCODE);
   padding: 40px;
   font-weight: 500;
   font-size: 14px;
+  margin-top: -1px;
 }
 
 .container-footer {
@@ -361,7 +369,7 @@ footer {
   padding: 7px 0 7px 7px;
 }
 
-.correo button{
+.correo button {
   border: none;
 }
 
@@ -369,6 +377,7 @@ footer {
   background-color: var(--gray);
   color: #fff;
   background-color: #DB4C0B;
+  padding: 10px;
 }
 
 .correo button i:hover {
@@ -410,7 +419,7 @@ footer {
   color: white;
 }
 
-.redes i:hover{
+.redes i:hover {
   color: var(--celesteCODE);
 }
 
@@ -425,17 +434,16 @@ footer {
 
 .segundaColumna .arriba ul {
   width: 33%;
-
   display: flex;
   flex-direction: column;
 }
 
-.segundaColumna .arriba ul li a {
-  text-align: center;
+.segundaColumna .arriba {
+  text-align: left;
   margin-bottom: 5px;
 }
 
-.segundaColumna .arriba ul li a:hover{
+.segundaColumna .arriba ul li a:hover {
   color: var(--celesteCODE);
 }
 
@@ -477,6 +485,8 @@ footer {
   width: 30px;
 }
 
-.segundaColumna .abajo a:hover{color: var(--whatsapp);}
+.segundaColumna .abajo a:hover {
+  color: var(--whatsapp);
+}
 
 @media (min-width: 768px) {}

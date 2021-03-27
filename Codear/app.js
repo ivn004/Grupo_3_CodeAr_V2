@@ -28,12 +28,14 @@ var homeRouter = require(path.join(__dirname,"routes","homeRouter"));
 var productRouter = require(path.join(__dirname,"routes","productRouter"));
 var admin = require(path.join(__dirname,"routes","admin"));
 var user = require(path.join(__dirname,"routes","users"));
+var infoRouter = require(path.join(__dirname, "routes", "info"));
 
 //===================/ RUTAS WEB /===================//
 app.use('/', homeRouter);
 app.use("/cursos", productRouter);
 app.use("/users", user);
 app.use("/admin", admin);
+app.use("/info", infoRouter);
 //===================/ RUTAS WEB /===================//
 
 // catch 404 and forward to error handler

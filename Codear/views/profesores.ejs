@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- HEAD -->
+<%- include("partials/head.ejs") %>
+<!-- HEAD -->
+
+<body>
+  <!-- Header -->
+  <%- include("partials/header.ejs") %>
+  <!-- /Header -->
+
+
+  <div class="container-fluid container-profesores">
+    <div class="caja-profesores row">
+      <div class="col-md-12">
+        <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+          
+          <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="5000">
+              <img src="/images/profeEricMedina.jpg" alt="">
+            </div>
+
+            <div class="carousel-item" data-bs-interval="5000">
+              <img src="/images/profeMaximoDeMichieli.jpg" alt="">
+            </div>
+
+          </div>
+          
+        </div>
+      </div>
+    </div>
+      <a href="#" class="convertiteEnProfesor col-6">Convertite en profesor</a>
+  </div>
+
+
+  <!-- FOOTER -->
+  <%- include("partials/footer.ejs") %>
+  <!-- FOOTER -->
+</body>
+
+</html>

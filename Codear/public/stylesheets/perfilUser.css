@@ -13,25 +13,55 @@
 }
 
 /* CONTROLADOR */
-.cuenta-perfil li{
-  margin: 10px 0;
+.navegador-usuario {
+  background: var(--negroCODE);
+  width: 100%;
+  border: none;
+  display: flex;
+  justify-content: center;
+  margin: 0;
 }
 
-.cuenta-perfil li a:hover{
+.navegador-item {
+  height: auto;
+  color: white;
+  padding: 10px;
+}
+
+.navegador-buttom {
+  background: transparent;
   color: var(--fondo);
+  border: none;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.navegador-buttom:hover{
+  border-bottom:2px solid var(--naranja);
+  color: var(--fondo);
+}
+
+.navegador-buttom:focus{
+  outline-style: none;
+}   
+
+
+.active{
+  border-bottom: 2px solid white;
 }
 /* CONTROLADOR */
 
 /* PERFIL */
 
-.perfil{
+.perfil {
   margin: auto;
   display: flex;
+  flex-direction: row;
   justify-content: center;
   background-color: rgb(209, 209, 209);
 }
 
-.bienvenido-user{
+.bienvenido-user {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -44,22 +74,23 @@
   border-radius: 50%;
 }
 
-.bienvenido-user p{
+.bienvenido-user p {
   font-size: 16px;
 }
+
 /* PERFIL */
 
 /* DATOS */
-.datos-user{
- width: 100%;
- display: flex;
- justify-content: flex-start;
- flex-direction: column;
- align-items: flex-start;
- padding: 20px;
+.datos-user {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
 }
 
-.datos-user h2{
+.datos-user h2 {
   padding: 10px 40px;
   margin: 0;
 }
@@ -69,15 +100,15 @@
   margin: 0;
 }
 
-.cajaUser>div{
+.cajaUser>div {
   text-align: right;
   font-size: 14px;
 }
 
-.cajaUser{
+.cajaUser {
   margin: auto;
   width: 90%;
-  background-color:var(--fondo);
+  background-color: var(--fondo);
   padding: 10px;
   display: flex;
   align-items: center;
@@ -85,67 +116,69 @@
 
 .cajaUser h3,
 .cajaUser h4,
-.cajaUser div{
+.cajaUser div {
   margin: 0;
 }
+
 /* DATOS */
 
 /* EDICION DE DATOS */
-.cajaUser form{
+.cajaUser form {
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.cajaUser .modal-content{
+.cajaUser .modal-content {
   padding: 20px;
 }
 
-.cajaUser .modal-title{
+.cajaUser .modal-title {
   font-size: 16px;
   font-weight: bold;
 }
 
-.cajaUser .salir-edit-perfil{
+.cajaUser .salir-edit-perfil {
   padding: 5px;
   border: none;
   background: transparent;
 }
 
-.cajaUser .salir-edit-perfil i{
-    font-size: 20px;
+.cajaUser .salir-edit-perfil i {
+  font-size: 20px;
 }
 
-.cajaUser .modal-body{
-display: flex;
-justify-content: center;
-padding: 10px;
+.cajaUser .modal-body {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
 }
 
-.cajaUser > p{
-text-align: right;
-padding: 10px;
+.cajaUser>p {
+  text-align: right;
+  padding: 10px;
 }
 
-.cajaUser .modal-body input{
-padding: 0 5px;}
+.cajaUser .modal-body input {
+  padding: 0 5px;
+}
 
-.cajaUser .modal-body label{
+.cajaUser .modal-body label {
   font-weight: 600;
 }
 
-.cajaUser .modal-footer button{
+.cajaUser .modal-footer button {
   font-size: 15px;
 }
 
 /* PERFIL EDIT */
-.cajaUser input{
+.cajaUser input {
   font-size: 14px;
 }
 
 /* PERFIL LIST */
-.usuarios-list > a{
+.usuarios-list>a {
   margin-right: 0;
   margin-left: 0;
   padding-left: 0;
@@ -153,37 +186,55 @@ padding: 0 5px;}
 }
 
 .usuario-list,
-.usuarios-list{
+.usuarios-list {
   margin: 0;
   padding: 0;
 }
 
-.usuario-list{
+.usuario-list {
   padding: 15px 0;
   border-bottom: 2px solid var(--negroCODE);
 }
 
 .usuario-list h2,
-.usuario-list form{
+.usuario-list form {
   margin: 0;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.star-product{
+.star-product {
   border: none;
 }
 
-.usuario-list form i{
+.usuario-list form i {
   font-size: 30px;
 }
 
-.usuario-list form i:hover{
+.usuario-list form i:hover {
   color: var(--naranja);
 }
 
-.img-usuario-list{
+.img-usuario-list {
   width: auto;
   max-height: 50px;
 }
+
+/* MIS CURSOS */
+.cursos-perfil-container{
+  width: 100%;
+  background: chartreuse;
+}
+
+.cursos-perfil-container .card{
+  background: chocolate;
+}
+
+.cursos-perfil-container .card>div{
+  display: flex;
+  flex-direction: row;
+}
+
+
+/* MIS CURSOS */

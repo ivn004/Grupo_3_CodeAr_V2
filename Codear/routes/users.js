@@ -26,12 +26,12 @@ router.post("/login", logoutCheck, validationLogin, processLogin);
 router.get("/edit", logoutCheckEdit, editPerfil);
 router.put("/update", imgPerfil.any(), updatePerfil);
 
-
 //Cerrar Sesión
 router.get("/logout", logout)
 
 //Perfil Usuario
-router.get("/perfil",adminCheck, perfil)
+router.get("/perfil", adminCheck, perfil)
+
 
 
 module.exports = router;

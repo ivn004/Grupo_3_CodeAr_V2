@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <!-- HEAD -->
 <%- include("partials/head.ejs")  %>
 <!-- HEAD -->
 
 <body>
-	<!-- Header -->
+	<!-- HEADER -->
 	<%- include("partials/header.ejs")  %>
-	<!-- /Header -->
+	<!-- /HEADER -->
 
-	<!-- Banner -->
+	<!-- BANNER -->
 	<div class="banner-home-xl">
 		<img src="/images/codear.jpg" alt="">
 	</div>
-	<div class="banner-home">
 
+	<!-- Banner Slider -->
+	<div class="banner-home">
 		<input type="radio" id="1" name="image-slide" hidden />
 		<input type="radio" id="2" name="image-slide" hidden />
 		<input type="radio" id="3" name="image-slide" hidden />
@@ -34,29 +36,15 @@
 			</div>
 
 		</div>
-
-		<!-- <div class="pagination-slider-home">
-           
-            <label class="pagination-item-slider-home" for="1">
-            </label>
-            
-            <label class="pagination-item-slider-home" for="2">
-            </label>
-            
-            <label class="pagination-item-slider-home" for="3">
-            </label>
-            
-        </div> -->
-
 	</div>
-	<!-- /Banner -->
+	<!-- /BANNER -->
 
 	<!-- Destacados -->
-	<div class="container-fluid products-wrapper">
+	<div class="container-fluid container-destacados">
 		<div class="row">
 			<div class="col-12">
-				<h2 class="products-title">Te invitamos a descubrir tu potencial</h2>
-				<p class="products-description">Accede a los mejores Cursos online. Aprende de la mano de los mejores
+				<h2 class="title">Te invitamos a descubrir tu potencial</h2>
+				<p class="description">Accede a los mejores Cursos online. Aprende de la mano de los mejores
 					profesionales y descubrí todo tu potencial.</p>
 			</div>
 			
@@ -82,19 +70,21 @@
 							</div>
 							<% }) %>
 
-			<a href="/cursos/carrito" class="btn btn-primary col-8 col-sm-6 ver-mas">Ver todos los cursos <i
-					class="fas fa-arrow-right"></i></a>
+			<a href="/cursos/carrito" class="btn btn-primary col-8 col-sm-6 ver-mas">
+				Ver todos los cursos <i class="fas fa-arrow-right"></i>
+				</a>
 		</div>
 	</div>
 	<!-- Destacados -->
 
 	<!-- infoCodear -->
 	<div class="container infoCodear row">
+
 		<div class="title col-12">
 			<h1>Asi son los cursos de codeAR</h1>
 		</div>
-		<div class="info col-12 row">
 
+		<div class="info col-12 row">
 			<div class="col-12 col-lg-6">
 				<div class="infoo row">
 					<i class="far fa-clock col-2"></i>
@@ -117,7 +107,7 @@
 
 			<div class="col-12 col-lg-6">
 				<div class="infoo row">
-					<i class="far fa-star"></i>
+					<i class="far fa-star col-2"></i>
 					<div class="col-10">
 						<h3>Profesores expertos</h3>
 						<p>Cada profesor imparte solo lo que mejor sabe hacer, asegurando transmitir la pasión y la excelenciaen
@@ -129,7 +119,7 @@
 
 			<div class="col-12 col-lg-6">
 				<div class="infoo row">
-					<i class="fas fa-tv"></i>
+					<i class="fas fa-tv col-2"></i>
 					<div class="col-10">
 						<h3>Calidad</h3>
 						<p>Videos de máxima calidad para que no pierdas detalle. Y como el acceso es ilimitado, puedes verlo una y
@@ -140,7 +130,7 @@
 
 			<div class="col-12 col-lg-6">
 				<div class="infoo row">
-					<i class="fas fa-lightbulb"></i>
+					<i class="fas fa-lightbulb col-2"></i>
 					<div class="col-10">
 						<h3>Comparte conocimiento</h3>
 						<p>Expón tus dudas, pide feedback,aporta soluciones.</p>
@@ -150,7 +140,7 @@
 
 			<div class="col-12 col-lg-6">
 				<div class="infoo row">
-					<i class="fas fa-book"></i>
+					<i class="fas fa-book col-2"></i>
 					<div class="col-10">
 						<h3>Cursos producidos profesionamente</h3>
 						<p>Seleccionamos a los mejores y un equipo profesional produce el curso con ellos.</p>
@@ -158,11 +148,12 @@
 				</div>
 			</div>
 		</div>
+
 	</div>
 	<!-- infoCodear -->
 
 	<!-- Seleccion Amplia-->
-	<div class="container-fluid seleccionAmplia row">
+	<div class="container-fluid container-seleccionAmplia row">
 		<h1 class="col-12">La selección de cursos más amplia del mundo</h1>
 		<p class="col-12">Elige entre más de 130.000 cursos en vídeo y en línea con nuevo contenido cada mes.</p>
 		<div class="selecciones-mas-amplias col-12 row">
@@ -194,7 +185,7 @@
 			</ul>
 			<div class="tab-content" id="myTabContent">
 				<div class="tab-pane fade show active" id="diseñoweb" role="tabpanel" aria-labelledby="home-tab">
-					<div class="row selecciones-python">
+					<div class="row selecciones">
 						<div class="col-12">
 							<h1>Amplía tus oportunidaddes profesionales con <%= diseñoWeb.categoria %> </h1>
 							<p>
@@ -274,8 +265,6 @@
 						</div>
 						<h1 class="explora">Emplorar <a href="/cursos/videojuegos"><%= videoJuegos.categoria %> </a> > </h1>
 						<div class="row">
-
-
 
 						</div>
 					</div>

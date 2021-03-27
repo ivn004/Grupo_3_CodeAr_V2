@@ -183,16 +183,7 @@ const productAddController = {
         id: id,
       },
     })
-      .then((usuario) => {
-        res.render("admin/users/perfil", {
-          usuario,
-          title: "Mi Perfil",
-        });
-      })
-      .catch((error) => {
-        res.send(error);
-      });
-  },
-};
+  }
+}
 
 module.exports = productAddController;

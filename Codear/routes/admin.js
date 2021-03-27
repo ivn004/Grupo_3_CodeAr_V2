@@ -12,12 +12,12 @@ const adminPerfil = require("../middlewares/admin-perfil");
 const { createCurso, storeCurso, editCurso, updateCurso, deleteCurso, listCurso, index, ventas, usersList, deleteUser} = require("../controllers/admin/productAdminController");
 const upload = require(path.join("..", "utils", "multerProducts"))
 
-const { categorias } = require(path.join("..","controllers","admin","categoriaController"));
+const { categorias } = require(path.join("..","controllers","admin","categoriaController")); 
 
 
 
 /* GET página Administración. */
-router.get("/",adminPerfil, adminSession,index)
+router.get("/",adminPerfil, adminSession, index)
 
 /* Página Lista de Cursos. */
 router.get("/curso/list", adminSession, listCurso);

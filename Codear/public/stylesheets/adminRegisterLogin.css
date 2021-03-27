@@ -3,12 +3,31 @@
   --input-padding-y: .75rem;
 }
 
+/* Variables */
+:root {
+  --negroCODE: #020202;
+  --celesteCODE: #308999;
+  --gray: #666666;
+  --fondo: #ebebeb;
+  --naranja: #DB4C0B;
+  --whatsapp: #20B038;
+  --fuente-base: 'Ubuntu', sans-serif;
+}
+
+/*  */
+
 body {
   background-image: url("/images/fondologin.jpg");
   background-position: center;
   background-repeat: repeat;
   background-size: 150%;
   /* background: linear-gradient(to right, #DB4C0B, #308999); */
+}
+
+.card {
+  margin: 20px 0px;
+  padding: 40px 0px;
+
 }
 
 .card-signin {
@@ -20,12 +39,13 @@ body {
 .card-signin .card-title {
   margin-bottom: 2rem;
   font-weight: 300;
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   font-weight: 400;
 }
 
 .card-signin .card-body {
-  padding: 2rem;
+  padding: 1rem;
+  width: 80%;
 }
 
 .form-signin {
@@ -33,7 +53,7 @@ body {
 }
 
 .form-signin .btn {
-  font-size: 80%;
+  font-size: 14px;
   border-radius: 5rem;
   letter-spacing: .1rem;
   font-weight: bold;
@@ -44,11 +64,13 @@ body {
 .form-label-group {
   position: relative;
   margin-bottom: 1rem;
+  padding: 0px;
 }
 
 .form-label-group input {
   height: auto;
   border-radius: 2rem;
+  font-size: 16px;
 }
 
 .form-label-group>input,
@@ -69,6 +91,7 @@ body {
   border: 1px solid transparent;
   border-radius: .25rem;
   transition: all .1s ease-in-out;
+  font-size: 16px;
 }
 
 .form-label-group input::-webkit-input-placeholder {
@@ -119,14 +142,29 @@ body {
   text-align: center;
   margin-top: 21px;
   margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.loginhereVolver:hover {
+  color: var(--celesteCODE);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.loginhereRegisterLogin {
+  font-size: 16px;
+  color: var(--negroCODE);
+}
+
+.loginhereRegisterLogin:hover {
+  color: var(--naranja);
+  text-decoration: none;
 }
 
 .loginhere-link {
   font-weight: 700;
   color: #222;
 }
-
-
 /* REGISTER */
 
 
