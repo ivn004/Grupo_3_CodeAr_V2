@@ -11,14 +11,17 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Product.belongsTo(models.category,{
-        as: 'categoria'
+      Product.belongsTo(models.Category,{
+        as: 'categoria',
+        foreignKey : 'categoryId'
       })
-      Product.belongsTo(models.teacher,{
-        as :'profesor'
+      Product.belongsTo(models.Teacher,{
+        as :'profesor',
+        foreignKey : 'teacherId'
       })
-      Product.belongsTo(models.level,{
-        as :'nivel'
+      Product.belongsTo(models.Level,{
+        as :'nivel',
+        foreignKey : 'levelId'
     })
   }
   };
