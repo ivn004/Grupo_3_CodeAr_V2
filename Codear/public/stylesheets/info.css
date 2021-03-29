@@ -168,9 +168,109 @@ strong {
 
 /* TESTIMONIO */
 .container-testimonios{
-  background-image: url("/images/fondoestrellas.jpg") ;
-  background-position: center;
-  background-size: cover;
+  background-image: url(/images/fondoestrellasblancosinnada.png) ;
+}
+
+.img-testimonio{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-testimonio div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 700px;
+  margin: 20px 0 40px 0;
+}
+
+.img-testimonio h2{
+font-size: 60px;
+text-transform: uppercase;
+text-align: center;
+padding: 0px;
+margin: 0;
+}
+
+.img-testimonio img{
+  width: 200px;
+}
+
+
+.clientes-testimonio {
   width: 100%;
-  height: 200px;
+  max-width: 1000px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.clientes-testimonio .cards{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.clientes-testimonio .card{
+  padding: 20px;
+  background: transparent;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 50px;
+  border: 2px solid var(--celesteCODE);
+  background: var(--celesteCODE);
+  width: 90%;
+  margin-bottom: 30px;
+}
+
+.clientes-testimonio img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  display: block;
+}
+
+.clientes-testimonio .cards .card>.contenido-texto-card {
+  width: 60%;
+  color: #fff;
+}
+
+.clientes-testimonio .cards .card>.contenido-texto-card p {
+  font-weight: 300;
+  padding-top: 5px;
+   font-size:16px;
+}
+
+.clientes-testimonio .cards .card>.contenido-texto-card h4{
+  padding-top: 5px;
+  font-size: 18px;
+}
+
+
+/* TERMINOS Y CONDICIONES */
+
+.container-terminosCondiciones{
+  margin: auto;
+  text-align: justify;
+}
+
+.container-terminosCondiciones h2{
+  font-size: 25px;
+  margin: 30px;
+}
+
+.container-terminosCondiciones h3{
+  font-size: 20px;
+  text-indent: 25px;
+  width: 100%;
+}
+
+.container-terminosCondiciones p{
+  font-size: 16px;
 }
