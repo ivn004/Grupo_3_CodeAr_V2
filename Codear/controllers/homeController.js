@@ -29,8 +29,6 @@ const homeController = {
     let javaScript = db.Category.findAll({
       where: {
         id: 2,
-        productos: db.Category.filter(product=>{
-          return product.categoryId == 'javaScript'})
       },
       include: [
         {
