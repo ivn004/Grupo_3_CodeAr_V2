@@ -29,6 +29,8 @@ const homeController = {
     let javaScript = db.Category.findAll({
       where: {
         id: 2,
+        productos: db.Category.filter(product=>{
+          return product.categoryId == 'javaScript'})
       },
       include: [
         {
@@ -50,7 +52,7 @@ const homeController = {
 
     Promise.all([html, diseñoWeb, javaScript, videoJuegos]).then(
       ([html, diseñoWeb, javaScript, videoJuegos]) => {
-        res.send(diseñoWeb);
+        /* res.send(diseñoWeb); */
         res.render("index", {
           title: "HOME",
           html,
