@@ -235,10 +235,14 @@
 						<div class="tab-pane fade" id="javascript" role="tabpanel" aria-labelledby="profile-tab">
 							<div class="row selecciones-python">
 								<div class="col-12">
-									<h1>Amplía tus oportunidaddes profesionales con JavaScript 
+									<h1>Amplía tus oportunidaddes profesionales con JavaScript
 									</h1>
 									<p>
-										JavaScript es uno de los lenguajes de programación más extendidos del mundo, sobre todo porque es la columna vertebral de las aplicaciones web interactivas. Además, JavaScript es un lenguaje estupendo para los principiantes, porque les da la oportunidad de escribir un código que hace algo visual, lo que resulta útil y motivador cuando estás dando los primeros pasos en la programación.
+										JavaScript es uno de los lenguajes de programación más extendidos del mundo,
+										sobre todo porque es la columna vertebral de las aplicaciones web interactivas.
+										Además, JavaScript es un lenguaje estupendo para los principiantes, porque les
+										da la oportunidad de escribir un código que hace algo visual, lo que resulta
+										útil y motivador cuando estás dando los primeros pasos en la programación.
 
 									</p>
 								</div>
@@ -247,33 +251,32 @@
 									</a> </h1>
 								<div class="row">
 
-									<% for( let index=; index < 3; index++ ) { %>
+									<% javaScript.forEach(product=> { %>
 										<div class="col-12 col-sm-6 col-lg-3">
 											<section class="product-box">
-												<a href="cursos/detail/<%= javaScript.productos[index].id %> "></a>
-													<img src="/images/cursos/<%= javascript.productos[index].imagen %> "
+												<a href="cursos/detail/<%= product.id %> ">
+													<img src="/images/cursos/<%= product.imagen %> "
 														class="card-img-top">
 													<div class="card-body ">
 														<div>
 															<h5 class="card-title ">
-																<%= javaScript.productos[index].nombre %>
+																<%= product.nombre %>
 															</h5>
 														</div>
 														<div class="precio-curso ">
 															<div class="rebaja">
-																<p>65% Dto. <span class="tachado">$<%=
-																			javaScript.productos[index].precio %>
+																<p>65% Dto. <span class="tachado">$<%= product.precio %>
 																			ARG</span></p>
 															</div>
 															<a href="#" class="btn btn-primary col-12 card-precio"><i
 																	class="fas fa-shopping-cart"></i>$<%=
-																	javaScript.productos[index].descuento %> ARG</a>
+																	product.descuento %> ARG</a>
 														</div>
 													</div>
 												</a>
 											</section>
 										</div>
-										<% } %>
+										<% }) %>
 
 								</div>
 							</div>
@@ -285,35 +288,41 @@
 									<h1>Amplía tus oportunidades profesionales desarrollando videos juegos
 									</h1>
 									<p>
-										Sumérgete en el mundo de desarrollo de videos juegos, de la mano de los mejores profesores del pais
+										Sumérgete en el mundo de desarrollo de videos juegos, de la mano de los mejores
+										profesores del pais
 
 									</p>
 								</div>
 								<h1 class="explora">Explorar <a href="/cursos/videojuegos">
-									desarrollo de video juegos
+										desarrollo de video juegos
 									</a> > </h1>
 								<div class="row">
-									<% for( let index = 0; index < 3; index++ ) { %>
-							<div class="col-12 col-sm-6 col-lg-3">
-								<section class="product-box">
-									<a href="cursos/detail/<%= Videojuegos.productos[index].id %> ">
-										<img src="/images/cursos/<%= Videojuegos.productos[index].imagen %> " class="card-img-top">
-										<div class="card-body ">
-											<div>
-												<h5 class="card-title "><%= Videojuegos.productos[index].nombre %> </h5>
-											</div>
-											<div class="precio-curso ">
-												<div class="rebaja">
-													<p>65% Dto. <span class="tachado">$<%= Videojuegos.productos[index].precio %> ARG</span></p>
-												</div>
-												<a href="#" class="btn btn-primary col-12 card-precio"><i
-														class="fas fa-shopping-cart"></i>$<%= Videojuegos.productos[index].descuento %> ARG</a>
-											</div>
+									<% videoJuegos.forEach(product=> { %>
+										<div class="col-12 col-sm-6 col-lg-3">
+											<section class="product-box">
+												<a href="cursos/detail/<%= product.id %> ">
+													<img src="/images/cursos/<%= product.imagen %> "
+														class="card-img-top">
+													<div class="card-body ">
+														<div>
+															<h5 class="card-title ">
+																<%= product.nombre %>
+															</h5>
+														</div>
+														<div class="precio-curso ">
+															<div class="rebaja">
+																<p>65% Dto. <span class="tachado">$<%= product.precio %>
+																			ARG</span></p>
+															</div>
+															<a href="#" class="btn btn-primary col-12 card-precio"><i
+																	class="fas fa-shopping-cart"></i>$<%=
+																	product.descuento %> ARG</a>
+														</div>
+													</div>
+												</a>
+											</section>
 										</div>
-									</a>
-								</section>
-							</div>
-							<% } %>
+										<% }) %>
 
 								</div>
 							</div>

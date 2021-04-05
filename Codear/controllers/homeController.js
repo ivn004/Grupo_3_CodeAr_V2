@@ -16,6 +16,7 @@ const homeController = {
     });
 
     let diseñoWeb = db.Category.findAll({
+      limit: 4,
       where: {
         id: 1,
       },
@@ -27,6 +28,7 @@ const homeController = {
     });
 
     let javaScript = db.Category.findAll({
+      limit: 4,
       where: {
         id: 2,
       },
@@ -38,6 +40,7 @@ const homeController = {
     });
 
     let videoJuegos = db.Category.findAll({
+      limit: 4,
       where: {
         id: 3,
       },
