@@ -16,6 +16,39 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `products`
+--
+
+DROP TABLE IF EXISTS `products`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `products` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `precio` int(11) DEFAULT NULL,
+  `descuento` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `imagen` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `descripcion` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `publico` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `requisitos` varchar(500) COLLATE utf8_bin DEFAULT NULL,
+  `resumen` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `lecciones` int(11) DEFAULT NULL,
+  `categoryId` int(11) DEFAULT NULL,
+  `teacherId` int(11) DEFAULT NULL,
+  `levelId` int(11) DEFAULT NULL,
+  `createdAt` datetime NOT NULL,
+  `updatedAt` datetime NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `categoryId` (`categoryId`),
+  KEY `teacherId` (`teacherId`),
+  KEY `levelId` (`levelId`),
+  CONSTRAINT `products_ibfk_1` FOREIGN KEY (`categoryId`) REFERENCES `categories` (`id`),
+  CONSTRAINT `products_ibfk_2` FOREIGN KEY (`teacherId`) REFERENCES `teachers` (`id`),
+  CONSTRAINT `products_ibfk_3` FOREIGN KEY (`levelId`) REFERENCES `levels` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
 -- Dumping data for table `products`
 --
 
@@ -34,4 +67,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-04-06 22:15:34
+-- Dump completed on 2021-04-07 17:39:33
