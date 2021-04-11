@@ -4,144 +4,136 @@
 <%- include("../partials/head.ejs") %>
   <!-- HEAD -->
 
-<body>
-  <!-- HEADER -->
-  <header>
-    <div class="container-fluid row header-admin">
-      <!-- LOGO -->
-      <div class="logo col-6 col-md-3 col-lg-2">
-        <a href="/">
-          <img src="/images/CODE.svg" />
-        </a>
-      </div>
-      <!-- LOGO -->
+  <body>
+    <!-- HEADER -->
+    <header>
+      <div class="container-fluid row header-admin">
+        <!-- LOGO -->
+        <div class="logo col-6 col-md-3 col-lg-2">
+          <a href="/">
+            <img src="/images/CODE.svg" />
+          </a>
+        </div>
+        <!-- LOGO -->
 
-      <!-- NAVEGADOR -->
-      <div class="navegador-perfil col-6">
-        <ul class="nav nav-pills navegador-usuario" id="pills-tab" role="tablist">
-          <li class="nav-item navegador-item" role="presentation">
-            <button class=" active navegador-buttom" id="pills-home-tab" data-bs-toggle="pill"
-              data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home"
-              aria-selected="true">Perfil</button>
-          </li>
-          <li class="nav-item navegador-item" role="presentation">
-            <button class="navegador-buttom" id="pills-profile-tab" data-bs-toggle="pill"
-              data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile"
-              aria-selected="false">Mis Cursos</button>
-          </li>
-          <li class="nav-item navegador-item" role="presentation">
-            <a class="navegador-buttom" href="/cursos/carrito">Más Cursos</a>
-          </li>
-        </ul>
-      </div>
-      <!-- NAVEGADOR -->
-
-      <!-- PERFIL -->
-      <ul class="ingresa col-6 col-md-4 col-lg-3 col-xl-3 row">
-        <li class="col-7">
-          <div class="perfil-header row">
-            <h3 class="col-8"><%= userAdmin.nombreUsuario %> </h3>
-            <img class="col-4" src="/images/avatares/<%= userAdmin.avatar %> " alt="">
-          </div>
-          <ul class="submenu">
-            <li class="cr">
-              <a href="/">Volver a Inicio</a>
+        <!-- NAVEGADOR -->
+        <div class="navegador-perfil col-6">
+          <ul class="nav nav-pills navegador-usuario" id="pills-tab" role="tablist">
+            <li class="nav-item navegador-item" role="presentation">
+              <button class=" active navegador-buttom" id="pills-home-tab" data-bs-toggle="pill"
+                data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home"
+                aria-selected="true">Perfil</button>
             </li>
-            <li class="crea">
-              <a href="/users/logout">Cerrar Sesión</a>
+            <li class="nav-item navegador-item" role="presentation">
+              <button class="navegador-buttom" id="pills-profile-tab" data-bs-toggle="pill"
+                data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile"
+                aria-selected="false">Mis Cursos</button>
+            </li>
+            <li class="nav-item navegador-item" role="presentation">
+              <a class="navegador-buttom" href="/cursos/carrito">Más Cursos</a>
             </li>
           </ul>
-        </li>
-      </ul>
-      <!-- PERFIL -->
-
-    </div>
-  </header>
-  <!-- HEADER -->
-
-
-  <div class="perfil container-fluid row">
-    <div class="tab-content" id="pills-tabContent">
-      <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-        <!-- PERFIL -->
-        <div class="bienvenido-user col-12">
-          <img src="/images/avatares/<%= userAdmin.avatar %> " alt="">
-          <h1>Bienvenido, <%= userAdmin.nombreUsuario %> </h1>
-          <p>Administra tu información y las opciones de privacidad y seguridad a fin de que Codear sea más relevante
-            para
-            ti.</p>
         </div>
-        <div class="datos-user">
-          <h2>Mis datos</h2>
-          <h3>Datos de Cuenta</h3>
-          <div class="cajaUser row">
-            <h3 class="col-5">Usuario</h3>
-            <h4 class="col-5"><%= userAdmin.nombreUsuario %> </h4>
-            <p class="col-2"><a href="/users/edit/<%= userAdmin.id %>">Editar</a></p>
-          </div>
-          <div class="cajaUser row">
-            <h3 class="col-5">E-mail</h3>
-            <h4 class="col-5"><%= userAdmin.email %> </h4>
-            <p class="col-2"><a href="#">Editar</a></p>
-          </div>
-          <div class="cajaUser row">
-            <h3 class="col-5">Clave</h3>
-            <h4 class="col-5"><%= userAdmin.pass %></h4>
-            <p class="col-2"><a href="#">Editar</a></p>
-          </div>
-          <h3>Datos Personales</h3>
-          <div class="cajaUser row">
-            <h3 class="col-5">Nombre y Apellido</h3>
-            <h4 class="col-5"><%= userAdmin.nombrePerfil %> <%= userAdmin.apellidoPerfil%></h4>
-            <p class="col-2"><a href="#">Editar</a></p>
-          </div>
-          <div class="cajaUser row">
-            <h3 class="col-5">Documento</h3>
-            <h4 class="col-5"><%= userAdmin.documento %></h4>
-            <p class="col-2"><a href="#">Editar</a></p>
-          </div>
-          <div class="cajaUser row">
-            <h3 class="col-5">Telefono</h3>
-            <h4 class="col-5"><%= userAdmin.telefonoPerfil %></h4>
-            <p class="col-2"><a href="#">Editar</a></p>
-          </div>
-          <div class="cajaUser row">
-            <h3 class="col-5">Domicilio</h3>
-            <h4 class="col-5"><%= userAdmin.domicilioPerfil %></h4>
-            <p class="col-2"><a href="#">Editar</a></p>
-          </div>
-        </div>
+        <!-- NAVEGADOR -->
+
         <!-- PERFIL -->
+        <ul class="ingresa col-6 col-md-4 col-lg-3 col-xl-3 row">
+          <li class="col-7">
+            <div class="perfil-header row">
+              <h3 class="col-8">
+                <%= userAdmin.nombreUsuario %>
+              </h3>
+              <img class="col-4" src="/images/avatares/<%= userAdmin.avatar %> " alt="">
+            </div>
+            <ul class="submenu">
+              <li class="cr">
+                <a href="/">Volver a Inicio</a>
+              </li>
+              <li class="crea">
+                <a href="/users/logout">Cerrar Sesión</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <!-- PERFIL -->
+
       </div>
-      <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-        <!-- MIS CURSOS -->
+    </header>
+    <!-- HEADER -->
 
-        <div class="container-fluid row">
-          <div class="cursos-perfil-container col-12">
-            <div class="card" style="max-width: 540px;">
-              <div>
-                <div class="">
-                  <img src="/images/cursos/creacionDeMembershipSitesConWordPress.png" alt="...">
-                </div>
-                <div class="">
-                  <div class="card-body">
-                    <h5 class="card-title">Creacion de una tienda online con WordPress</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                      additional
-                      content. This content is a little bit longer.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+
+    <div class="perfil container-fluid row">
+      <div class="tab-content" id="pills-tabContent">
+        <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+          <!-- PERFIL -->
+          <div class="bienvenido-user col-12">
+            <img src="/images/avatares/<%= usuario.avatar %> " alt="">
+            <h1>Bienvenido, <%= usuario.nombre %>
+            </h1>
+            <p>Administra tu información y las opciones de privacidad y seguridad a fin de que Codear sea más relevante
+              para
+              ti.</p>
+          </div>
+          <div class="datos-user">
+            <h2>Mis datos</h2>
+            <h3>Datos de Cuenta</h3>
+            <div class="cajaUser row">
+              <h3 class="col-5">Usuario</h3>
+              <h4 class="col-5">
+                <%= usuario.nombre %>
+              </h4>
+              <p class="col-2"><a href="/users/edit">Editar</a></p>
+            </div>
+            <div class="cajaUser row">
+              <h3 class="col-5">E-mail</h3>
+              <h4 class="col-5">
+                <%= usuario.email %>
+              </h4>
+              <p class="col-2"><a href="/users/edit">Editar</a></p>
+            </div>
+
+            <h3>Datos Personales</h3>
+
+
+            <div class="cajaUser row">
+              <h3 class="col-5">Telefono</h3>
+              <h4 class="col-5">
+                <%= usuario.telefono %>
+              </h4>
+              <p class="col-2"><a href="/users/edit">Editar</a></p>
+            </div>
+
+            <!-- PERFIL -->
+          </div>
+          <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+            <!-- MIS CURSOS -->
+
+            <div class="container-fluid row">
+              <div class="cursos-perfil-container col-12">
+                <div class="card" style="max-width: 540px;">
+                  <div>
+                    <div class="">
+                      <img src="/images/cursos/creacionDeMembershipSitesConWordPress.png" alt="...">
+                    </div>
+                    <div class="">
+                      <div class="card-body">
+                        <h5 class="card-title">Creacion de una tienda online con WordPress</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                          additional
+                          content. This content is a little bit longer.</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
 
-        <!-- MIS CURSOS -->
+            <!-- MIS CURSOS -->
+          </div>
+          <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div>
+        </div>
       </div>
-      <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div>
-    </div>
-  </div>
 
       <!-- FOOTER -->
       <%- include("../partials/footer") %>

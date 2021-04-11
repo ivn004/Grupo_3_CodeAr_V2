@@ -36,15 +36,16 @@
             <div class="card-body ">
               <div>
                 <h5 class="card-title "><%= product.nombre %></h5>
-                <p class="card-profe">Un curso de <%= product.nombreProfesor %> <%= product.apellidoProfesor %></p>
+                <p class="card-profe">Un curso de <%= product.profesor.nombre %> <%= product.profesor.apellido %></p>
                 <!-- <p class="card-text">Crea una tienda profesional, conoce la fantastica plataforma de Wordpress</p> -->
               </div>
               <div class="precio-curso ">
                 <div class="rebaja">
                   <h1>REBAJA</h1>
-                  <p>65% Dto. $1.990ARS</p>
+                  <p><%- product.descuento %>% Dto. $<%- product.precio %>ARS</p>
+
                 </div>
-                <a href="#" class="btn btn-primary col-12 card-precio"><i class="fas fa-shopping-cart"></i>$1200</a>
+                <a href="#" class="btn btn-primary col-12 card-precio"><i class="fas fa-shopping-cart"></i>$<%- product.precio - product.precio * product.descuento /100 %></a>
               </div>
             </div>
          </a>

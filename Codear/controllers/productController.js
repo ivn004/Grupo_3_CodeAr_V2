@@ -1,5 +1,7 @@
+const { Op } = require("sequelize");
 const db = require("../database/models");
 const path = require("path");
+const { sequelize } = require("../database/models");
 const { getProducts, setProducts } = require(path.join(
   "..",
   "data",
@@ -12,16 +14,25 @@ const productController = {
   //DETALLE
   detail: (req, res) => {
     const { id } = req.params;
-
-    let resultado = products.find((product) => {
-      return product.id === +id;
-    });
-
-    res.render("productDetail", {
-      title: "detalle",
-      resultado,
-      products,
-      id,
+    db.Product.findOne({
+      where: {
+        id: id,
+      },
+      include: [
+        {
+          association: "profesor",
+        },
+        {
+          association: "nivel",
+        },
+      ],
+    }).then((resultado) => {
+      /* return res.send(resultado) */
+      res.render("productDetail", {
+        title: "detalle",
+        resultado,
+        id,
+      });
     });
   },
 
@@ -29,13 +40,24 @@ const productController = {
   search: (req, res) => {
     const buscar = req.query.search;
 
-    const resultado = products.filter((product) => {
-      return product.nombreCurso.toLowerCase().includes(buscar.toLowerCase());
-    });
-
-    res.render("resultados", {
-      title: "Resultado de la búsqueda",
-      products: resultado,
+    db.Product.findAll({
+      where: {
+        nombre: { [Op.like]: `%${buscar}%` },
+      },
+      include: [
+        {
+          association: "profesor",
+        },
+        {
+          association: "nivel",
+        },
+      ],
+    }).then(function (products) {
+      res.render("resultados", {
+        title: "Resultado de la búsqueda",
+        products,
+        toThousand,
+      });
     });
   },
 
@@ -44,7 +66,16 @@ const productController = {
   //--------------CARRITO-----------------//
 
   carrito: (req, res) => {
-    db.Product.findAll().then(function (products) {
+    db.Product.findAll({
+      include: [
+        {
+          association: "profesor",
+        },
+        {
+          association: "nivel",
+        },
+      ],
+    }).then(function (products) {
       res.render("carritoViews/productCar", {
         title: "Cursos",
         products,
@@ -60,6 +91,14 @@ const productController = {
       where: {
         categoryId: id,
       },
+      include: [
+        {
+          association: "profesor",
+        },
+        {
+          association: "nivel",
+        },
+      ],
     }).then(function (products) {
       db.Category.findByPk(id).then((categoria) => {
         res.render("carritoViews/productCar", {
@@ -68,18 +107,6 @@ const productController = {
           toThousand,
         });
       });
-    });
-    // Renderiza en la vista "ProductCar" y crea los nuevos arrays y metodos para usar.
-  },
-
-  packCursos: (req, res) => {
-    const productoFiltra = products.filter((producto) => {
-      return producto.categoria === "pack";
-    });
-
-    res.render("packs", {
-      title: "Packs",
-      productoFiltra,
     });
   },
 };

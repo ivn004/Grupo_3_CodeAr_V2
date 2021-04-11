@@ -139,7 +139,7 @@ const productAddController = {
       });
   },
   updatePerfil: (req, res, next) => {
-    const { nombreUsuario, email, pass, telefonoPerfil } = req.body;
+    const { nombreUsuario, email, telefonoPerfil } = req.body;
 
     /* let passHash = bcrypt.hashSync(pass.trim(), 12); */
 
@@ -180,7 +180,11 @@ const productAddController = {
       where: {
         id: id,
       },
-    });
+    })
+    .then((usuario)=>{
+      res.render('admin/users/perfil',{title : 'miPerfil',usuario})
+    }
+    )
   },
 };
 

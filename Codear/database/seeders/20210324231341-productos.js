@@ -11,6 +11,7 @@ productos.forEach(producto => {
   nombre : producto.nombreCurso,
   precio : producto.precio,
   descuento : faker.random.number({min:5,max:20}),
+  imagen : producto.fotoCurso,
   descripcion : producto.descripcionCorta,
   publico : producto.aQuienEstaDirigido,
   requisitos : producto.requisitos,

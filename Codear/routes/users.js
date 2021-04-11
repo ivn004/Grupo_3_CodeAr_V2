@@ -30,7 +30,7 @@ router.put("/update", imgPerfil.any(), updatePerfil);
 router.get("/logout", logout)
 
 //Perfil Usuario
-router.get("/perfil", adminCheck, perfil)
+router.get("/perfil", /* adminCheck,  */perfil)
 
 
 
