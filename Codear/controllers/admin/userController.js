@@ -84,7 +84,6 @@ const productAddController = {
         title: "Login",
       });
     } else {
-      /*  let resultado = usuarios.find(user => user.email === email); */
       db.Usuarios.findOne({
         where: {
           email: email,
@@ -150,7 +149,6 @@ const productAddController = {
       {
         nombre: nombreUsuario,
         email: email,
-       /*  password: passHash, */
         telefono: telefonoPerfil,
       },
       {
@@ -182,8 +180,8 @@ const productAddController = {
       where: {
         id: id,
       },
-    })
-  }
-}
+    });
+  },
+};
 
 module.exports = productAddController;
