@@ -50,11 +50,20 @@ strong {
   color: var(--naranja);
 }
 
-.equipoInfo .imgInfo {
+.equipoInfo .matias {
   width: 150px;
   height: 300px;
   background-image: url("/images/matias.jpg");
   background-size: 100%;
+}
+
+.equipoInfo .ivan {
+  width: 150px;
+  height: 300px;
+  background-image: url("/images/ivan.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-x: center;
 }
 
 .equipoInfo p {
@@ -167,18 +176,18 @@ strong {
 }
 
 /* TESTIMONIO */
-.container-testimonios{
-  background-image: url(/images/fondoestrellasblancosinnada.png) ;
+.container-testimonios {
+  background-image: url(/images/fondoestrellasblancosinnada.png);
 }
 
-.img-testimonio{
+.img-testimonio {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.img-testimonio div{
+.img-testimonio div {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -187,15 +196,15 @@ strong {
   margin: 20px 0 40px 0;
 }
 
-.img-testimonio h2{
-font-size: 60px;
-text-transform: uppercase;
-text-align: center;
-padding: 0px;
-margin: 0;
+.img-testimonio h2 {
+  font-size: 60px;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 0px;
+  margin: 0;
 }
 
-.img-testimonio img{
+.img-testimonio img {
   width: 200px;
 }
 
@@ -208,12 +217,12 @@ margin: 0;
   justify-content: center;
 }
 
-.clientes-testimonio .cards{
+.clientes-testimonio .cards {
   display: flex;
   justify-content: space-evenly;
 }
 
-.clientes-testimonio .card{
+.clientes-testimonio .card {
   padding: 20px;
   background: transparent;
   display: flex;
@@ -244,10 +253,10 @@ margin: 0;
 .clientes-testimonio .cards .card>.contenido-texto-card p {
   font-weight: 300;
   padding-top: 5px;
-   font-size:16px;
+  font-size: 16px;
 }
 
-.clientes-testimonio .cards .card>.contenido-texto-card h4{
+.clientes-testimonio .cards .card>.contenido-texto-card h4 {
   padding-top: 5px;
   font-size: 18px;
 }
@@ -255,22 +264,76 @@ margin: 0;
 
 /* TERMINOS Y CONDICIONES */
 
-.container-terminosCondiciones{
+.container-terminosCondiciones {
   margin: auto;
   text-align: justify;
 }
 
-.container-terminosCondiciones h2{
+.container-terminosCondiciones h2 {
   font-size: 25px;
   margin: 30px;
 }
 
-.container-terminosCondiciones h3{
+.container-terminosCondiciones h3 {
   font-size: 20px;
   text-indent: 25px;
   width: 100%;
 }
 
-.container-terminosCondiciones p{
+.container-terminosCondiciones p {
   font-size: 16px;
+}
+
+/* NUESTRA HISTORIA */
+.container-nuestraHistoria {
+  background: white;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 30px;
+}
+
+.infoHistoria {
+  font-size: 16px;
+}
+
+.infoHistoria a {
+  text-decoration: underline;
+  text-shadow: var(--negroCODE);
+}
+
+.ivanMatiImg {
+  width: 700px;
+}
+
+.infoHistoria span{
+  font-weight: 600;
+}
+
+/* PREGUNTAS */
+.container-preguntas {
+  background: white;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 30px;
+}
+
+.infoPreguntas {
+  font-size: 16px;
+}
+
+.infoPreguntas a {
+  text-decoration: underline;
+  text-shadow: var(--negroCODE);
+}
+
+.ivanMatiImg {
+  width: 700px;
+}
+
+.infoPreguntas span {
+  font-weight: 600;
 }
