@@ -18,10 +18,7 @@ const productAddController = {
 
   //REGISTER PROCESS
   processRegister: (req, res) => {
-    let errores = validationResult(req); //valida lo que entre por req
-    /* descomentar linea 23 si se quiere registar atraves de un json */
-    // res.send(errores);
-
+    let errores = validationResult(req); 
     if (!errores.isEmpty()) {
       //si no está vacio
       return res.render("admin/register", {
@@ -31,14 +28,7 @@ const productAddController = {
       });
     }
 
-    let { nombreUsuario, pass, email } = req.body; //Recibimos los name
-    /* let { nombre,email,telefono,password,crear,actualizar,avatar } = req.body; */
-    /* let lastID = 0;
-    usuarios.forEach(usuario=>{
-      if (usuario.id > lastID){
-        lastID = usuario.id
-      }
-    }); //Buscamos en el JSON el ultimo ID */
+    let { nombreUsuario, pass, email } = req.body; 
 
     let passHash = bcrypt.hashSync(pass.trim(), 12); //Hasheamos la contraseña
 
@@ -53,17 +43,7 @@ const productAddController = {
       .catch((error) => {
         res.send(error);
       });
-    /*  let newUser = {
-      id: +lastID +1,
-      nombreUsuario: nombreUsuario.trim(),
-      email,
-      pass: passHash,
-      avatar : req.files[0].filename,
-      admin:false,
-    } //Creamos el nuevo usuario */
-
-    /*  usuarios.push(newUser); //Guardamos el usuario
-        setAdmins(usuarios);//Guardamos el usuario */
+  
   },
 
   // LOGIN
