@@ -5,28 +5,28 @@ const fs = require("fs")
 // const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "."); // Formula para los puntos de los miles.
 
 //Productos
-const { getProducts, setProducts } = require(path.join("..","..","data","products")); // Requiere la ruta del JSON parseado.
+const { getProducts, setProducts } = require(path.join("..", "..", "data", "products")); // Requiere la ruta del JSON parseado.
 const products = getProducts();
 
 //Admin
 const bcrypt = require("bcrypt");
 const { getAdmins, setAdmins } = require("../../data/usuarios")
 const usuarios = getAdmins();
-const {validationResult} = require("express-validator");
+const { validationResult } = require("express-validator");
 
 //Controlador
 const productAddController = {
     //ADMINISTRADOR
-    index:(req,res)=>{
-        res.render(path.join("admin","index"),{
-            title:"Administración"
+    index: (req, res) => {
+        res.render(path.join("admin", "index"), {
+            title: "Administración"
         })
     },
 
     //LISTADO DE CURSOS
     listCurso: (req, res) => {
         db.Product.findAll({
-            include:[{
+            include: [{
                 association: 'categoria'
             }]
         })
@@ -48,23 +48,23 @@ const productAddController = {
             products
         }); // Renderiza en la vista "productAll" y crea los nuevos arrays y metodos para usar.
     },
-    
+
     //PÁGINA PARA CREAR PRODUCTO
     createCurso: (req, res) => {
 
         db.Teacher.findAll()
             .then((teachers) => {
                 db.Category.findAll()
-                .then((categorias)=>{
-                    res.render("admin/productAdd", {
-                        title: "Añadir Producto",
-                        teachers,
-                        categorias
+                    .then((categorias) => {
+                        res.render("admin/productAdd", {
+                            title: "Añadir Producto",
+                            teachers,
+                            categorias
+                        });
+                    })
+                    .catch((error) => {
+                        res.send(error);
                     });
-                })
-                .catch((error) => {
-                    res.send(error);
-                });
             })
             .catch((error) => {
                 res.send(error);
@@ -73,10 +73,10 @@ const productAddController = {
     },
 
     //GUARDA EL NUEVO PRODUCTO
-    storeCurso:(req,res,next) => {
+    storeCurso: (req, res, next) => {
         console.log(req.files)
 
-        const { nombre, imagen, precio, descuento, categoryId, descripcion, resumen, publico, requisitos, lecciones, levelId, teacherId} = req.body;
+        const { nombre, imagen, precio, descuento, categoryId, descripcion, resumen, publico, requisitos, lecciones, levelId, teacherId } = req.body;
 
         db.Product.create({
             nombre: nombre,
@@ -92,16 +92,16 @@ const productAddController = {
             levelId: levelId,
             teacherId: teacherId,
         })
-        .then((user)=>{
-            res.redirect("/admin/curso/list")
-        })
-        .catch((error) => {
-            res.send(error);
-        });
+            .then((user) => {
+                res.redirect("/admin/curso/list")
+            })
+            .catch((error) => {
+                res.send(error);
+            });
     },
-    editCurso:(req,res)=>{
+    editCurso: (req, res) => {
 
-        const {id} = req.params;
+        const { id } = req.params;
 
         db.Teacher.findAll()
             .then((teachers) => {
@@ -132,30 +132,30 @@ const productAddController = {
                 res.send(error);
             });
     },
-    updateCurso:(req,res,next)=>{
+    updateCurso: (req, res, next) => {
 
-        const { nombre, imagen ,precio,descuento,categoryId,descripcion,resumen,publico,requisitos,lecciones,levelId,teacherId} = req.body;
+        const { nombre, imagen, precio, descuento, categoryId, descripcion, resumen, publico, requisitos, lecciones, levelId, teacherId } = req.body;
 
-        const {id} = req.params;
+        const { id } = req.params;
 
         db.Product.update(
             {
-                nombre : nombre,
+                nombre: nombre,
                 imagen: req.files[0] ? req.files[0].filename : undefined,
-                precio : precio,
-                descuento : descuento,
-                categoryId : categoryId,
-                descripcion : descripcion,
-                publico : publico,
-                requisitos : requisitos,
-                lecciones : lecciones,
-                resumen : resumen,
-                levelId : levelId,
-                teacherId : teacherId,
+                precio: precio,
+                descuento: descuento,
+                categoryId: categoryId,
+                descripcion: descripcion,
+                publico: publico,
+                requisitos: requisitos,
+                lecciones: lecciones,
+                resumen: resumen,
+                levelId: levelId,
+                teacherId: teacherId,
             },
             {
-                where:{
-                    id:id,
+                where: {
+                    id: id,
                 },
             }
         )
@@ -169,7 +169,7 @@ const productAddController = {
     },
     deleteCurso: (req, res) => {
 
-        const {id} = req.params;
+        const { id } = req.params;
 
         db.Product.findOne({
             where: {
@@ -180,13 +180,13 @@ const productAddController = {
                 if (product) {
                     if (fs.existsSync("/public/images/cursos", product.imagen)) {
                         fs.unlinkSync("/public/images/cursos", product.imagen)
-                    } 
+                    }
                     db.Product.destroy({
-                        where:{
-                            id : id,
+                        where: {
+                            id: id,
                         }
                     })
-                        .then(()=>{
+                        .then(() => {
                             res.redirect("/admin/curso/list");
                         })
                         .catch((error) => {
@@ -207,7 +207,7 @@ const productAddController = {
             usuarios
         })
     },
-    deleteUser:(req,res)=>{
+    deleteUser: (req, res) => {
         const { id } = req.params;
 
         usuarios.forEach(user => {
@@ -215,7 +215,7 @@ const productAddController = {
                 if (fs.existsSync(path.join("public", "images", "avatares", user.avatar))) {
                     fs.unlinkSync(path.join("public", "images", "avatares", user.avatar))
                 }
-                
+
                 let eliminar = usuarios.indexOf(user);
                 usuarios.splice(eliminar, 1)
             }
