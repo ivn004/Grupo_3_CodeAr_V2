@@ -22,7 +22,7 @@ const homeController = {
       },
       include: [
         {
-          association: "cursos",
+          association: "Product",
         },
       ],
     });
@@ -34,7 +34,7 @@ const homeController = {
       },
       include: [
         {
-          association: "cursos",
+          association: "Product",
         },
       ],
     });
@@ -46,7 +46,7 @@ const homeController = {
       },
       include: [
         {
-          association: "cursos",
+          association: "Product",
         },
       ],
     });

@@ -64,10 +64,10 @@
         <% products.forEach(product => { %>
         <a  href="/admin/curso/edit/<%= product.id %>">
           <div class="producto row container">
-            <img class="img-producto col-lg-2" src="/images/cursos/<%= product.fotoCurso %> " alt="">
-            <h2 class="nombre-producto col-4 col-lg-4"><%= product.nombreCurso %> </h2>
+            <img class="img-producto col-lg-2" src="/images/cursos/<%= product.imagen %> " alt="">
+            <h2 class="nombre-producto col-4 col-lg-4"><%= product.nombre %> </h2>
             <h2 class="precio-producto col-4 col-lg-2">$<%= product.precio %> </h2>
-            <h2 class="categoria-producto col-lg-2"><%= product.categoria %> </h2>
+            <h2 class="categoria-producto col-lg-2"><%= product.categoria.nombre %> </h2>
             <form class="col-4 col-lg-2" action="/admin/curso/delete/<%=product.id%>?_method=DELETE" method="POST">
               <button class="star-product" type="submit"><i class=" fas fa-trash-alt borrar-producto"></i></button>
             </form>

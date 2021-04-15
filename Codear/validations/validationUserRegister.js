@@ -1,8 +1,7 @@
 const fs = require("fs");
 const { check, body } = require("express-validator");
 
-const {getAdmins} = require("../data/usuarios");
-let usuarios = getAdmins()
+const db = require("../database/models");
 
 module.exports = [
   //Nombre de usuario
@@ -16,14 +15,18 @@ module.exports = [
     .isEmail().withMessage("El email debe ser válido"),
 
     body("email").custom(value => {
-      let result = usuarios.find(user => user.email === value.trim());
-      if (result) {
-        return false //Retorna falso si hay un usuario con ese email
-      }else{
-        return true //true es importante porq sino nunca nos va a validar
-      }
-    }).withMessage("El email ya está en uso"),
-
+      return db.Usuarios.findOne({
+        where:{
+          email : value,
+        }
+      })
+        .then((user) => {
+          if (user) {
+            return Promise.reject("El email ya está en uso")
+          } 
+        })
+    }),
+  
 
     //Contraseña
     check("pass")
