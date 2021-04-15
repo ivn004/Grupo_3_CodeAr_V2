@@ -167,7 +167,6 @@ strong {
 }
 
 .infoEmpresa a {
-  text-decoration: underline;
   text-shadow: var(--negroCODE);
 }
 
@@ -220,6 +219,12 @@ strong {
   box-shadow: 0 0 10px 0 var(--negroCODE);
   border-radius: none;
   border: none;
+}
+
+@media (max-width:425px){
+  .convertiteEnProfesor{
+    font-size: 16px;
+  }
 }
 
 /* TESTIMONIO */
