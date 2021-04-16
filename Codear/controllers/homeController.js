@@ -108,7 +108,6 @@ const homeController = {
         },
       ],
     });
-
     Promise.all([html, diseñoWeb, javaScript, videoJuegos,marketing,negocios,php,tipografia,wordpress]).then(
       ([html, diseñoWeb, javaScript, videoJuegos,marketing,negocios,php,tipografia,wordpress]) => {
         /* res.send(diseñoWeb); */
