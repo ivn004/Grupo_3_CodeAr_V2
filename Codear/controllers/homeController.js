@@ -13,12 +13,9 @@ const homeController = {
   home: (req, res) => {
     let html = db.Product.findAll({
       limit: 4,
-      where : {
-     id: 1,
-      }
     });
 
-    let diseñoWeb = db.Category.findAll({
+    let diseñoWeb = db.Category.findOne({
       limit: 4,
       where: {
         id: 6,
@@ -30,7 +27,7 @@ const homeController = {
       ],
     });
 
-    let javaScript = db.Category.findAll({
+    let javaScript = db.Category.findOne({
       limit: 4,
       where: {
         id: 2,
@@ -42,7 +39,7 @@ const homeController = {
       ],
     });
 
-    let videoJuegos = db.Category.findAll({
+    let videoJuegos = db.Category.findOne({
       limit: 4,
       where: {
         id: 3,
@@ -110,18 +107,18 @@ const homeController = {
     });
     Promise.all([html, diseñoWeb, javaScript, videoJuegos,marketing,negocios,php,tipografia,wordpress]).then(
       ([html, diseñoWeb, javaScript, videoJuegos,marketing,negocios,php,tipografia,wordpress]) => {
-        /* res.send(diseñoWeb); */
+        // return res.send(diseñoWeb);
         res.render("index", {
           title: "HOME",
           html,
           diseñoWeb,
           javaScript,
           videoJuegos,
-          marketing,
-          negocios,
-          php,
-          tipografia,
-          wordpress,
+          // marketing,
+          // negocios,
+          // php,
+          // tipografia,
+          // wordpress,
           toThousand,
         }); // Renderiza en la vista "index" y crea los nuevos arrays y metodos para usar.
       }

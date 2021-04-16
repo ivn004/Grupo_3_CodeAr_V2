@@ -36,6 +36,7 @@ const productAddController = {
       nombre: nombreUsuario,
       email: email,
       password: passHash,
+      avatar: req.files[0] ? req.files[0].filename : "default.png",
     })
       .then((user) => {
         res.redirect("/users/login");

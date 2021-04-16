@@ -5,6 +5,7 @@ const path = require("path");
 //middleware
 const adminSession = require("../middlewares/checkAdmin");
 const adminPerfil = require("../middlewares/admin-perfil");
+const adminProduct = require("../validations/productValidation");
 
 
 
@@ -25,7 +26,7 @@ router.get("/usersList", adminSession, usersList);
 
 // Crear Producto
 router.get("/curso/create", adminSession,createCurso);
-router.post("/curso/store",upload.any(),storeCurso);
+router.post("/curso/store",adminProduct, upload.any(),storeCurso);
 
 //Editar Producto
 router.get("/curso/edit/:id", adminSession,editCurso);

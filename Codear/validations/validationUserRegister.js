@@ -30,8 +30,8 @@ module.exports = [
 
     //Contraseña
     check("pass")
-      .isLength({ min: 8, max: 12 }) //Establece mínimo y máximo de caracteres para la contraseña.
-      .withMessage("La contraseña debe tener mínimo de 8 y un máximo de 12 carácteres"), //Envia un mensaje.
+      .isLength({ min: 8}) //Establece mínimo y máximo de caracteres para la contraseña.
+      .withMessage("La contraseña debe tener mínimo de 8 caracteres"), //Envia un mensaje.
 
     body("pass2").custom((value,{req} )=> {
       if (value !== req.body.pass) {

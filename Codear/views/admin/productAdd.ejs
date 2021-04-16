@@ -28,16 +28,16 @@
         </div>
 
         <!-- CAJA DE CURSOS -->
-        <div class="caja-de-cursos col-12 col-md-6">
+        <!-- <div class="caja-de-cursos col-12 col-md-6">
           <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item" role="presentation">
               <a class="nav-link active" id="home-tab" data-bs-toggle="tab" href="#foto" role="tab" aria-controls="home"
                 aria-selected="true">Foto del Curso</a>
             </li>
-            <!-- <li class="nav-item" role="presentation">
+            <li class="nav-item" role="presentation">
               <a class="nav-link" id="profile-tab" data-bs-toggle="tab" href="#completo" role="tab"
                 aria-controls="profile" aria-selected="false">Inserte curso completo</a>
-            </li> -->
+            </li>
           </ul>
           <div class="tab-content" id="myTabContent">
 
@@ -50,27 +50,22 @@
               </div>
             </div>
 
-            <!-- <div class="archivo-curso general tab-pane fade" id="completo" role="tabpanel"
-              aria-labelledby="profile-tab">
-              <div class="curso form-floating ">
-                <div class="">
-                  <input class="form-control form-control-lg" type="file" id="formFile" name="cursoCompleto">
-                </div>
-              </div>
-            </div> -->
           </div>
-        </div>
+        </div> -->
         <!-- CAJA DE CURSOS -->
 
         <!-- CAJA DE DATOS -->
-        <div class="caja-datos col-12 col-md-6">
+        <div class="caja-datos col-12 col-md-12">
           <!--  -->
           <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item" role="presentation">
-              <a class="nav-link active" id="home-tab" data-bs-toggle="tab" href="#precio" role="tab"
+              <a class="nav-link active" id="home-tab" data-bs-toggle="tab" href="#foto" role="tab" aria-controls="home"
+                aria-selected="true">Foto del Curso</a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a class="nav-link" id="home-tab" data-bs-toggle="tab" href="#precio" role="tab"
                 aria-controls="home" aria-selected="true">Precio</a>
             </li>
-
             <li class="nav-item" role="presentation">
               <a class="nav-link " id="home-tab" data-bs-toggle="tab" href="#categoria" role="tab" aria-controls="home"
                 aria-selected="false">Categoria</a>
@@ -78,7 +73,15 @@
           </ul>
           <!--  -->
           <div class="tab-content" id="myTabContent">
-            <div class="tab-pane fade show active" id="precio" role="tabpanel" aria-labelledby="home-tab">
+            <div class="archivo-curso general tab-pane fade show active" id="foto" role="tabpanel"
+              aria-labelledby="home-tab">
+              <div class="campo-prof form-floating  col-12 row">
+                <div class="">
+                  <input class="form-control form-control-lg" type="file" id="formFile" name="imagen">
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="precio" role="tabpanel" aria-labelledby="home-tab">
               <div class="campo-prof form-floating  col-12 row">
                 <input type="text" class="form-control" id="modelo" placeholder="Precio ($)" name="precio">
                 <label for="modelo"></label>
@@ -154,6 +157,13 @@
         <!-- DESCRIPCION -->
 
 
+        <% if (typeof errores != "undefined") { %>
+        <ul>
+          <% errores.forEach(error => { %>
+          <li><%= error.msg %> </li>
+          <% }) %>
+        </ul>
+        <% } %>
 
 
         <!-- CAJA DE CURSOS -->

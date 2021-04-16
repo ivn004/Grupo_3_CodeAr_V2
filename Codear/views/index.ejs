@@ -175,7 +175,7 @@
 							<a class="nav-link" id="contact-tab" data-bs-toggle="tab" href="#videojuegos" role="tab"
 								aria-controls="home" aria-selected="true">Video Juegos</a>
 						</li>
-						<li class="nav-item" role="presentation">
+						<!-- <li class="nav-item" role="presentation">
 							<a class="nav-link" id="contact-tab" data-bs-toggle="tab" href="#arduino" role="tab"
 								aria-controls="contact" aria-selected="false">PHP</a>
 						</li>
@@ -186,14 +186,14 @@
 						<li class="nav-item" role="presentation">
 							<a class="nav-link" id="contact-tab" data-bs-toggle="tab" href="#negocios" role="tab"
 								aria-controls="contact" aria-selected="false">Marketing</a>
-						</li>
+						</li> -->
 					</ul>
 					<div class="tab-content" id="myTabContent">
 						<div class="tab-pane fade show active" id="diseñoweb" role="tabpanel"
 							aria-labelledby="home-tab">
 							<div class="row selecciones">
 								<div class="col-12">
-									<h1>Amplía tus oportunidaddes profesionales con diseño-web </h1>
+									<h1>Amplía tus oportunidades profesionales con diseño-web </h1>
 									<p>
 										El mundo del desarrollo web es tan amplio como la propia Internet. Gran parte de
 										nuestra vida social y profesional se desarrolla en Internet, lo que ha fomentado
@@ -202,8 +202,8 @@
 									</p>
 								</div>
 								<h1 class="explora">Explorar <a href="/cursos/webdesing">diseño Web </a> > </h1>
-								<div class="row">
-									<% diseñoWeb.forEach(product=> { %>
+								<div class="col-12 row">
+									<% diseñoWeb.cursos.forEach(product=> { %>
 										<div class="col-12 col-sm-6 col-lg-3">
 											<section class="product-box">
 												<a href="cursos/detail/<%= product.id %> ">
@@ -233,9 +233,9 @@
 							</div>
 						</div>
 						<div class="tab-pane fade" id="javascript" role="tabpanel" aria-labelledby="profile-tab">
-							<div class="row selecciones-python">
+							<div class="row selecciones">
 								<div class="col-12">
-									<h1>Amplía tus oportunidaddes profesionales con JavaScript
+									<h1>Amplía tus oportunidades profesionales con JavaScript
 									</h1>
 									<p>
 										JavaScript es uno de los lenguajes de programación más extendidos del mundo,
@@ -249,9 +249,8 @@
 								<h1 class="explora">Explorar <a href="/cursos/js">
 										JavaScript
 									</a> </h1>
-								<div class="row">
-
-									<% javaScript.forEach(product=> { %>
+								<div class="col-12 row">
+									<% javaScript.cursos.forEach(product=> { %>
 										<div class="col-12 col-sm-6 col-lg-3">
 											<section class="product-box">
 												<a href="cursos/detail/<%= product.id %> ">
@@ -283,7 +282,7 @@
 						</div>
 
 						<div class="tab-pane fade" id="videojuegos" role="tabpanel" aria-labelledby="contact-tab">
-							<div class="row selecciones-python">
+							<div class="row selecciones">
 								<div class="col-12">
 									<h1>Amplía tus oportunidades profesionales desarrollando videos juegos
 									</h1>
@@ -296,8 +295,8 @@
 								<h1 class="explora">Explorar <a href="/cursos/videojuegos">
 										desarrollo de video juegos
 									</a> > </h1>
-								<div class="row">
-									<% videoJuegos.forEach(product=> { %>
+								<div class="col-12 row">
+									<% videoJuegos.cursos.forEach(product=> { %>
 										<div class="col-12 col-sm-6 col-lg-3">
 											<section class="product-box">
 												<a href="cursos/detail/<%= product.id %> ">
@@ -339,7 +338,6 @@
 			<!-- BANNER -->
 			<div class="container-fluid banner-2">
 				<img src="/images/segundoBannerHomeletras.png" alt="">
-				<a href="">Responder</a>
 			</div>
 			<!-- BANNER -->
 
@@ -348,23 +346,23 @@
 				<h1 class="categorias-principales col-12">Categorias Principales</h1>
 				<div class="col-12 col-sm-6 col-lg-3">
 					<div class="categoria">
-						<a href="/cursos/webdesing">
+						<a href="/cursos/categoria/1">
 							<img src="/images/categorias/diseño-web.png" alt="">
 						</a>
-						<h1>Diseño Web</h1>
+						<h1>Diseño</h1>
 					</div>
 				</div>
 				<div class="col-12 col-sm-6 col-lg-3">
 					<div class="categoria">
-						<a href="">
+						<a href="/cursos/categoria/2">
 							<img src="/images/categorias/arduino.png" alt="">
 						</a>
-						<h1>Arduino</h1>
+						<h1>Javascript</h1>
 					</div>
 				</div>
 				<div class="col-12 col-sm-6 col-lg-3">
 					<div class="categoria">
-						<a href="/cursos/webdesing">
+						<a href="/cursos/categoria/2">
 							<img src="/images/categorias/desarrollo.png" alt="">
 						</a>
 						<h1>Desarrollo Web</h1>
@@ -372,15 +370,15 @@
 				</div>
 				<div class="col-12 col-sm-6 col-lg-3">
 					<div class="categoria">
-						<a href="">
+						<a href="/cursos/categoria/2">
 							<img src="/images/categorias/emprendimiento.png" alt="">
 						</a>
-						<h1>Emprendimiento</h1>
+						<h1>Negocios</h1>
 					</div>
 				</div>
 				<div class="col-12 col-sm-6 col-lg-3">
 					<div class="categoria">
-						<a href="">
+						<a href="/cursos/categoria/2">
 							<img src="/images/categorias/marketing.png" alt="">
 						</a>
 						<h1>Marketing</h1>
@@ -388,15 +386,15 @@
 				</div>
 				<div class="col-12 col-sm-6 col-lg-3">
 					<div class="categoria">
-						<a href="">
+						<a href="/cursos/categoria/2">
 							<img src="/images/categorias/desarrollo-personal.png" alt="">
 						</a>
-						<h1>Desarrollo Personal</h1>
+						<h1>PHP</h1>
 					</div>
 				</div>
 				<div class="col-12 col-sm-6 col-lg-3">
 					<div class="categoria">
-						<a href="/cursos/videoJuegos">
+						<a href="/cursos/categoria/2">
 							<img src="/images/categorias/juego.png" alt="">
 						</a>
 						<h1>Desarrollo de Juegos</h1>
@@ -404,10 +402,10 @@
 				</div>
 				<div class="col-12 col-sm-6 col-lg-3">
 					<div class="categoria">
-						<a href="">
+						<a href="/cursos/categoria/2">
 							<img src="/images/categorias/software.png" alt="">
 						</a>
-						<h1>Desarrollo Software</h1>
+						<h1>WordPress</h1>
 					</div>
 				</div>
 			</div>

@@ -42,25 +42,30 @@
             <h5 class="card-title text-center">Registro</h5>
 
 
-            <form class="form-signin" action="" method="POST" enctype="multipart/form-data">
+            <form id="form" class="form-signin" action="" method="POST" enctype="multipart/form-data">
               <div class="form-label-group">
-                <input type="text" id="nombreUsuario" class="form-control" name="nombreUsuario" placeholder="Nombre">
-                <label for="nombreUsuario">Nombre</label>
+                <input type="text" id="nombre" class="form-control" name="nombreUsuario" placeholder="Nombre">
+                <label for="nombre">Nombre</label>
+                <span class="text-danger" id="errorNombre"></span>
               </div>
+
 
               <div class="form-label-group">
                 <input type="email" id="email" class="form-control" name="email" placeholder="Email">
                 <label for="email">Email</label>
+                <span class="text-danger" id="errorEmail"></span>
               </div>
 
               <div class="form-label-group">
                 <input type="password" id="password" class="form-control" name="pass" placeholder="Contraseña">
                 <label for="password">Contraseña</label>
+                <span class="text-danger" id="errorPass"></span>
               </div>
 
               <div class="form-label-group">
                 <input type="password" id="password2" class="form-control" name="pass2" placeholder="Reingrese contraseña">
                 <label for="password2">Confirme contraseña</label>
+                <span class="text-danger" id="errorPass2"></span>
               </div>
 
               <div class="form-label-group">
@@ -102,6 +107,8 @@
 	<!-- FOOTER -->
 	<%- include("../partials/footer.ejs")  %>
 	<!-- FOOTER -->
+
+  <script src="/js/registerValidation.js"></script>
 
 </body>
 

@@ -9,7 +9,6 @@ const { getProducts, setProducts } = require(path.join("..", "..", "data", "prod
 const products = getProducts();
 
 //Admin
-const bcrypt = require("bcrypt");
 const { getAdmins, setAdmins } = require("../../data/usuarios")
 const usuarios = getAdmins();
 const { validationResult } = require("express-validator");
@@ -76,11 +75,34 @@ const productAddController = {
     storeCurso: (req, res, next) => {
         console.log(req.files)
 
+        let errores = validationResult(req);
+
+        if (!errores.isEmpty()) {
+            db.Teacher.findAll()
+                .then((teachers) => {
+                    db.Category.findAll()
+                        .then((categorias) => {
+                            return res.render("admin/productAdd", {
+                                title: "Añadir Producto",
+                                teachers,
+                                categorias,
+                                errores: errores.errors
+                            });
+                        })
+                        .catch((error) => {
+                            return res.send(error);
+                        });
+                })
+                .catch((error) => {
+                    return res.send(error);
+                });
+        }
+
         const { nombre, imagen, precio, descuento, categoryId, descripcion, resumen, publico, requisitos, lecciones, levelId, teacherId } = req.body;
 
         db.Product.create({
             nombre: nombre,
-            imagen: req.files[0].filename,
+            imagen: req.files[0] ? req.files[0].filename : "default.png",
             precio: precio,
             descuento: descuento,
             categoryId: categoryId,
@@ -138,7 +160,41 @@ const productAddController = {
 
         const { id } = req.params;
 
-        db.Product.update(
+        let errores = validationResult(req);
+
+        if (!errores.isEmpty()) {
+            db.Teacher.findAll()
+                .then((teachers) => {
+                    db.Category.findAll()
+                        .then((categorias) => {
+                            db.Product.findOne({
+                                where: {
+                                    id: id,
+                                },
+                            })
+                                .then((product) => {
+                                    return res.render("admin/productEdit", {
+                                        title: "Editar Curso",
+                                        teachers,
+                                        categorias,
+                                        product,
+                                        errores: errores.errors
+                                    });
+                                })
+                                .catch((error) => {
+                                    return res.send(error);
+                                });
+                        })
+                        .catch((error) => {
+                            return res.send(error);
+                        });
+                })
+                .catch((error) => {
+                    return res.send(error);
+                });
+        }
+        else{
+            db.Product.update(
             {
                 nombre: nombre,
                 imagen: req.files[0] ? req.files[0].filename : undefined,
@@ -166,6 +222,9 @@ const productAddController = {
             .catch((error) => {
                 res.send(error);
             });
+        }
+
+        
     },
     deleteCurso: (req, res) => {
 
