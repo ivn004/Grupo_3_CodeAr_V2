@@ -11,7 +11,31 @@ let categorias = [
   },
   {
     nombre: 'Videojuegos',
-    descripcion :' Sumergete en el mundo de desarrollo de videos juegos, de la mano de los mejores profesores del pais. '
+    descripcion :'nos '
+  },
+  {
+    nombre: 'Marketing',
+    descripcion :'se '
+  },
+  {
+    nombre: 'Negocios',
+    descripcion :' que '
+  },
+  {
+    nombre: 'Diseño web',
+    descripcion :'po '
+  },
+  {
+    nombre: 'PHP',
+    descripcion :'ner '
+  },
+  {
+    nombre: 'Tipografia',
+    descripcion :'a '
+  },
+  {
+    nombre: 'Wordpress',
+    descripcion :' ca'
   }
  ];
 let categories = []

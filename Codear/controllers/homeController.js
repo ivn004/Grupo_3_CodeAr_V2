@@ -13,12 +13,15 @@ const homeController = {
   home: (req, res) => {
     let html = db.Product.findAll({
       limit: 4,
+      where : {
+     id: 1,
+      }
     });
 
     let diseñoWeb = db.Category.findAll({
       limit: 4,
       where: {
-        id: 1,
+        id: 6,
       },
       include: [
         {
@@ -50,9 +53,64 @@ const homeController = {
         },
       ],
     });
+    let marketing = db.Category.findAll({
+      limit: 4,
+      where: {
+        id: 4,
+      },
+      include: [
+        {
+          association: "cursos",
+        },
+      ],
+    });
+    let negocios = db.Category.findAll({
+      limit: 4,
+      where: {
+        id: 5,
+      },
+      include: [
+        {
+          association: "cursos",
+        },
+      ],
+    });
+    let php = db.Category.findAll({
+      limit: 4,
+      where: {
+        id: 7,
+      },
+      include: [
+        {
+          association: "cursos",
+        },
+      ],
+    });
+    let tipografia = db.Category.findAll({
+      limit: 4,
+      where: {
+        id: 8,
+      },
+      include: [
+        {
+          association: "cursos",
+        },
+      ],
+    });
+    let wordpress = db.Category.findAll({
+      limit: 4,
+      where: {
+        id: 9,
+      },
+      include: [
+        {
+          association: "cursos",
+        },
+      ],
+    });
 
-    Promise.all([html, diseñoWeb, javaScript, videoJuegos]).then(
-      ([html, diseñoWeb, javaScript, videoJuegos]) => {
+    Promise.all([html, diseñoWeb, javaScript, videoJuegos,marketing,negocios,php,tipografia,wordpress]).then(
+      ([html, diseñoWeb, javaScript, videoJuegos,marketing,negocios,php,tipografia,wordpress]) => {
         /* res.send(diseñoWeb); */
         res.render("index", {
           title: "HOME",
@@ -60,6 +118,11 @@ const homeController = {
           diseñoWeb,
           javaScript,
           videoJuegos,
+          marketing,
+          negocios,
+          php,
+          tipografia,
+          wordpress,
           toThousand,
         }); // Renderiza en la vista "index" y crea los nuevos arrays y metodos para usar.
       }

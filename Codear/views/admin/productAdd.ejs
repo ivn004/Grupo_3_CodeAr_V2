@@ -144,7 +144,7 @@
         <div class="profesor-contenedor col-12 row">
           <div class="campo-prof prof-info col-12 row">
             <select name="teacherId">
-              <option value="0" selected hidden>Seleccione una categoria</option>
+              <option value="0" selected hidden>Seleccione nombre del profeso</option>
               <% teachers.forEach(teacher => { %>
               <option value="<%= teacher.id %>"><%= teacher.nombre  %> <%= teacher.apellido %></option>
               <% }) %>
