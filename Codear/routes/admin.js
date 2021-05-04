@@ -26,7 +26,7 @@ router.get("/usersList", adminSession, usersList);
 
 // Crear Producto
 router.get("/curso/create", adminSession,createCurso);
-router.post("/curso/store",adminProduct, upload.any(),storeCurso);
+router.post("/curso/store", upload.any(),storeCurso);
 
 //Editar Producto
 router.get("/curso/edit/:id", adminSession,editCurso);

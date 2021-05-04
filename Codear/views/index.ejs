@@ -3,179 +3,180 @@
 
 <!-- HEAD -->
 <%- include("partials/head.ejs") %>
-	<!-- HEAD -->
+<!-- HEAD -->
 
-	<body>
-		<!-- HEADER -->
-		<%- include("partials/header.ejs") %>
-			<!-- /HEADER -->
+<body>
+	<!-- HEADER -->
+	<%- include("partials/header.ejs") %>
+	<!-- /HEADER -->
 
-			<!-- BANNER -->
-			<div class="banner-home-xl">
-				<img src="/images/codear.jpg" alt="">
+	<!-- BANNER -->
+	<div class="banner-home-xl">
+		<img src="/images/codear.jpg" alt="">
+	</div>
+
+	<!-- Banner Slider -->
+	<div class="banner-home">
+		<input type="radio" id="1" name="image-slide" hidden />
+		<input type="radio" id="2" name="image-slide" hidden />
+		<input type="radio" id="3" name="image-slide" hidden />
+
+		<div class="slide-home">
+
+			<div class="item-slide-home">
+				<img src="Images/codear.jpg">
 			</div>
 
-			<!-- Banner Slider -->
-			<div class="banner-home">
-				<input type="radio" id="1" name="image-slide" hidden />
-				<input type="radio" id="2" name="image-slide" hidden />
-				<input type="radio" id="3" name="image-slide" hidden />
+			<div class="item-slide-home">
+				<img src="Images/codear2.jpg">
+			</div>
 
-				<div class="slide-home">
+			<div class="item-slide-home">
+				<img src="Images/codear3.jpg">
+			</div>
 
-					<div class="item-slide-home">
-						<img src="Images/codear.jpg">
+		</div>
+	</div>
+	<!-- /BANNER -->
+
+	<!-- Destacados -->
+	<div class="container-fluid container-destacados">
+		<div class="row">
+			<div class="col-12">
+				<h2 class="title">Te invitamos a descubrir tu potencial</h2>
+				<p class="description">Accede a los mejores Cursos online. Aprende de la mano de los mejores
+					profesionales y descubrí todo tu potencial.</p>
+			</div>
+
+			<% html.forEach(product=> { %>
+			<div class="col-12 col-sm-6 col-lg-3">
+				<section class="product-box">
+					<a href="cursos/detail/<%= product.id %> ">
+						<img src="/images/cursos/<%= product.imagen %> " class="card-img-top">
+						<div class="card-body ">
+							<div>
+								<h5 class="card-title ">
+									<%= product.nombre %>
+								</h5>
+							</div>
+							<div class="precio-curso ">
+								<div class="rebaja">
+									<h1>REBAJA</h1>
+									<p><%- product.descuento %>% Dto. <span class="tachado">$<%- product.precio %>ARS</span></p>
+								</div>
+								<a href="#" class="btn btn-primary col-12 card-precio"><i
+										class="fas fa-shopping-cart"></i>$<%- product.precio - product.precio * product.descuento /100 %></a>
+							</div>
+						</div>
+					</a>
+				</section>
+			</div>
+			<% }) %>
+
+			<a href="/cursos/carrito" class="btn btn-primary col-8 col-sm-6 ver-mas">
+				Ver todos los cursos <i class="fas fa-arrow-right"></i>
+			</a>
+		</div>
+	</div>
+	<!-- Destacados -->
+
+	<!-- infoCodear -->
+	<div class="container infoCodear row">
+
+		<div class="title col-12">
+			<h1>Asi son los cursos de codeAR</h1>
+		</div>
+
+		<div class="info col-12 row">
+			<div class="col-12 col-lg-6">
+				<div class="infoo row">
+					<i class="far fa-clock col-2"></i>
+					<div class="col-10">
+						<h3>Aprende a tu ritmo</h3>
+						<p>Disfruta de los cursos desde casa, sin horarios ni entregas. </p>
 					</div>
-
-					<div class="item-slide-home">
-						<img src="Images/codear2.jpg">
-					</div>
-
-					<div class="item-slide-home">
-						<img src="Images/codear3.jpg">
-					</div>
-
 				</div>
 			</div>
-			<!-- /BANNER -->
 
-			<!-- Destacados -->
-			<div class="container-fluid container-destacados">
-				<div class="row">
-					<div class="col-12">
-						<h2 class="title">Te invitamos a descubrir tu potencial</h2>
-						<p class="description">Accede a los mejores Cursos online. Aprende de la mano de los mejores
-							profesionales y descubrí todo tu potencial.</p>
+			<div class="col-12 col-lg-6">
+				<div class="infoo row">
+					<i class="fas fa-chalkboard-teacher col-2"></i>
+					<div class="col-10">
+						<h3>De la mano del profesor</h3>
+						<p>Aprende técnicas y metodos de gran valor.</p>
 					</div>
-
-					<% html.forEach(product=> { %>
-						<div class="col-12 col-sm-6 col-lg-3">
-							<section class="product-box">
-								<a href="cursos/detail/<%= product.id %> ">
-									<img src="/images/cursos/<%= product.imagen %> " class="card-img-top">
-									<div class="card-body ">
-										<div>
-											<h5 class="card-title ">
-												<%= product.nombre %>
-											</h5>
-										</div>
-										<div class="precio-curso ">
-											<div class="rebaja">
-												<p>65% Dto. <span class="tachado">$<%= product.precio %> ARG</span></p>
-											</div>
-											<a href="#" class="btn btn-primary col-12 card-precio"><i
-													class="fas fa-shopping-cart"></i>$<%= product.descuento %> ARG</a>
-										</div>
-									</div>
-								</a>
-							</section>
-						</div>
-						<% }) %>
-
-							<a href="/cursos/carrito" class="btn btn-primary col-8 col-sm-6 ver-mas">
-								Ver todos los cursos <i class="fas fa-arrow-right"></i>
-							</a>
 				</div>
 			</div>
-			<!-- Destacados -->
 
-			<!-- infoCodear -->
-			<div class="container infoCodear row">
-
-				<div class="title col-12">
-					<h1>Asi son los cursos de codeAR</h1>
-				</div>
-
-				<div class="info col-12 row">
-					<div class="col-12 col-lg-6">
-						<div class="infoo row">
-							<i class="far fa-clock col-2"></i>
-							<div class="col-10">
-								<h3>Aprende a tu ritmo</h3>
-								<p>Disfruta de los cursos desde casa, sin horarios ni entregas. </p>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-12 col-lg-6">
-						<div class="infoo row">
-							<i class="fas fa-chalkboard-teacher col-2"></i>
-							<div class="col-10">
-								<h3>De la mano del profesor</h3>
-								<p>Aprende técnicas y metodos de gran valor.</p>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-12 col-lg-6">
-						<div class="infoo row">
-							<i class="far fa-star col-2"></i>
-							<div class="col-10">
-								<h3>Profesores expertos</h3>
-								<p>Cada profesor imparte solo lo que mejor sabe hacer, asegurando transmitir la pasión y
-									la excelenciaen
-									cada
-									lección.</p>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-12 col-lg-6">
-						<div class="infoo row">
-							<i class="fas fa-tv col-2"></i>
-							<div class="col-10">
-								<h3>Calidad</h3>
-								<p>Videos de máxima calidad para que no pierdas detalle. Y como el acceso es ilimitado,
-									puedes verlo una y
-									otra vez.</p>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-12 col-lg-6">
-						<div class="infoo row">
-							<i class="fas fa-lightbulb col-2"></i>
-							<div class="col-10">
-								<h3>Comparte conocimiento</h3>
-								<p>Expón tus dudas, pide feedback,aporta soluciones.</p>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-12 col-lg-6">
-						<div class="infoo row">
-							<i class="fas fa-book col-2"></i>
-							<div class="col-10">
-								<h3>Cursos producidos profesionamente</h3>
-								<p>Seleccionamos a los mejores y un equipo profesional produce el curso con ellos.</p>
-							</div>
-						</div>
+			<div class="col-12 col-lg-6">
+				<div class="infoo row">
+					<i class="far fa-star col-2"></i>
+					<div class="col-10">
+						<h3>Profesores expertos</h3>
+						<p>Cada profesor imparte solo lo que mejor sabe hacer, asegurando transmitir la pasión y
+							la excelenciaen
+							cada
+							lección.</p>
 					</div>
 				</div>
-
 			</div>
-			<!-- infoCodear -->
 
-			<!-- Seleccion Amplia-->
-			<div class="container-fluid container-seleccionAmplia row">
-				<h1 class="col-12">La selección de cursos más amplia del mundo</h1>
-				<p class="col-12">Elige entre más de 130.000 cursos en vídeo y en línea con nuevo contenido cada mes.
-				</p>
-				<div class="selecciones-mas-amplias col-12 row">
-					<ul class="nav nav-tabs" id="myTab" role="tablist">
-						<li class="nav-item" role="presentation">
-							<a class="nav-link active aa" id="home-tab" data-bs-toggle="tab" href="#diseñoweb"
-								role="tab" aria-controls="contact" aria-selected="false">Diseño Web</a>
-						</li>
-						<li class="nav-item" role="presentation">
-							<a class="nav-link" id="profile-tab" data-bs-toggle="tab" href="#javascript" role="tab"
-								aria-controls="profile" aria-selected="false">Javascript</a>
-						</li>
-						<li class="nav-item" role="presentation">
-							<a class="nav-link" id="contact-tab" data-bs-toggle="tab" href="#videojuegos" role="tab"
-								aria-controls="home" aria-selected="true">Video Juegos</a>
-						</li>
-						<!-- <li class="nav-item" role="presentation">
+			<div class="col-12 col-lg-6">
+				<div class="infoo row">
+					<i class="fas fa-tv col-2"></i>
+					<div class="col-10">
+						<h3>Calidad</h3>
+						<p>Videos de máxima calidad para que no pierdas detalle. Y como el acceso es ilimitado,
+							puedes verlo una y
+							otra vez.</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-12 col-lg-6">
+				<div class="infoo row">
+					<i class="fas fa-lightbulb col-2"></i>
+					<div class="col-10">
+						<h3>Comparte conocimiento</h3>
+						<p>Expón tus dudas, pide feedback,aporta soluciones.</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-12 col-lg-6">
+				<div class="infoo row">
+					<i class="fas fa-book col-2"></i>
+					<div class="col-10">
+						<h3>Cursos producidos profesionamente</h3>
+						<p>Seleccionamos a los mejores y un equipo profesional produce el curso con ellos.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<!-- infoCodear -->
+
+	<!-- Seleccion Amplia-->
+	<div class="container-fluid container-seleccionAmplia row">
+		<h1 class="col-12">La selección de cursos más amplia del mundo</h1>
+		<p class="col-12">Elige entre más de 130.000 cursos en vídeo y en línea con nuevo contenido cada mes.
+		</p>
+		<div class="selecciones-mas-amplias col-12 row">
+			<ul class="nav nav-tabs" id="myTab" role="tablist">
+				<li class="nav-item" role="presentation">
+					<a class="nav-link active aa" id="home-tab" data-bs-toggle="tab" href="#diseñoweb" role="tab"
+						aria-controls="contact" aria-selected="false">Diseño</a>
+				</li>
+				<li class="nav-item" role="presentation">
+					<a class="nav-link" id="profile-tab" data-bs-toggle="tab" href="#javascript" role="tab"
+						aria-controls="profile" aria-selected="false">Javascript</a>
+				</li>
+				<li class="nav-item" role="presentation">
+					<a class="nav-link" id="contact-tab" data-bs-toggle="tab" href="#videojuegos" role="tab" aria-controls="home"
+						aria-selected="true">Video Juegos</a>
+				</li>
+				<!-- <li class="nav-item" role="presentation">
 							<a class="nav-link" id="contact-tab" data-bs-toggle="tab" href="#arduino" role="tab"
 								aria-controls="contact" aria-selected="false">PHP</a>
 						</li>
@@ -187,236 +188,226 @@
 							<a class="nav-link" id="contact-tab" data-bs-toggle="tab" href="#negocios" role="tab"
 								aria-controls="contact" aria-selected="false">Marketing</a>
 						</li> -->
-					</ul>
-					<div class="tab-content" id="myTabContent">
-						<div class="tab-pane fade show active" id="diseñoweb" role="tabpanel"
-							aria-labelledby="home-tab">
-							<div class="row selecciones">
-								<div class="col-12">
-									<h1>Amplía tus oportunidades profesionales con diseño-web </h1>
-									<p>
-										El mundo del desarrollo web es tan amplio como la propia Internet. Gran parte de
-										nuestra vida social y profesional se desarrolla en Internet, lo que ha fomentado
-										la creación de nuevas industrias encaminadas a crear, administrar y depurar los
-										sitios web y las aplicaciones de los que dependemos en cada vez mayor medida.
-									</p>
-								</div>
-								<h1 class="explora">Explorar <a href="/cursos/webdesing">diseño Web </a> > </h1>
-								<div class="col-12 row">
-									<% diseñoWeb.cursos.forEach(product=> { %>
-										<div class="col-12 col-sm-6 col-lg-3">
-											<section class="product-box">
-												<a href="cursos/detail/<%= product.id %> ">
-													<img src="/images/cursos/<%= product.imagen %> "
-														class="card-img-top">
-													<div class="card-body ">
-														<div>
-															<h5 class="card-title ">
-																<%= product.nombre %>
-															</h5>
-														</div>
-														<div class="precio-curso ">
-															<div class="rebaja">
-																<p>65% Dto. <span class="tachado">$<%= product.precio %>
-																			ARG</span></p>
-															</div>
-															<a href="#" class="btn btn-primary col-12 card-precio"><i
-																	class="fas fa-shopping-cart"></i>$<%=
-																	product.descuento %> ARG</a>
-														</div>
-													</div>
-												</a>
-											</section>
-										</div>
-										<% }) %>
-								</div>
-							</div>
+			</ul>
+			<div class="tab-content" id="myTabContent">
+				<div class="tab-pane fade show active" id="diseñoweb" role="tabpanel" aria-labelledby="home-tab">
+					<div class="row selecciones">
+						<div class="col-12">
+							<h1>Amplía tus oportunidades profesionales con diseño </h1>
+							<p>
+								El mundo del desarrollo web es tan amplio como la propia Internet. Gran parte de
+								nuestra vida social y profesional se desarrolla en Internet, lo que ha fomentado
+								la creación de nuevas industrias encaminadas a crear, administrar y depurar los
+								sitios web y las aplicaciones de los que dependemos en cada vez mayor medida.
+							</p>
 						</div>
-						<div class="tab-pane fade" id="javascript" role="tabpanel" aria-labelledby="profile-tab">
-							<div class="row selecciones">
-								<div class="col-12">
-									<h1>Amplía tus oportunidades profesionales con JavaScript
-									</h1>
-									<p>
-										JavaScript es uno de los lenguajes de programación más extendidos del mundo,
-										sobre todo porque es la columna vertebral de las aplicaciones web interactivas.
-										Además, JavaScript es un lenguaje estupendo para los principiantes, porque les
-										da la oportunidad de escribir un código que hace algo visual, lo que resulta
-										útil y motivador cuando estás dando los primeros pasos en la programación.
-
-									</p>
+						<h1 class="explora">Explorar <a href="/cursos/categoria/6">Diseño</a> > </h1>
+						<div class="col-12 row">
+							<% diseñoWeb.cursos.forEach(product=> { %>
+							<div class="col-12 col-sm-6 col-lg-3">
+								<section class="product-box">
+									<a href="cursos/detail/<%= product.id %> ">
+										<img src="/images/cursos/<%= product.imagen %> " class="card-img-top">
+										<div class="card-body ">
+											<div>
+												<h5 class="card-title ">
+													<%= product.nombre %>
+												</h5>
+											</div>
+											<div class="precio-curso ">
+								<div class="rebaja">
+									<p><%- product.descuento %>% Dto. <span class="tachado">$<%- product.precio %>ARS</span></p>
 								</div>
-								<h1 class="explora">Explorar <a href="/cursos/js">
-										JavaScript
-									</a> </h1>
-								<div class="col-12 row">
-									<% javaScript.cursos.forEach(product=> { %>
-										<div class="col-12 col-sm-6 col-lg-3">
-											<section class="product-box">
-												<a href="cursos/detail/<%= product.id %> ">
-													<img src="/images/cursos/<%= product.imagen %> "
-														class="card-img-top">
-													<div class="card-body ">
-														<div>
-															<h5 class="card-title ">
-																<%= product.nombre %>
-															</h5>
-														</div>
-														<div class="precio-curso ">
-															<div class="rebaja">
-																<p>65% Dto. <span class="tachado">$<%= product.precio %>
-																			ARG</span></p>
-															</div>
-															<a href="#" class="btn btn-primary col-12 card-precio"><i
-																	class="fas fa-shopping-cart"></i>$<%=
-																	product.descuento %> ARG</a>
-														</div>
-													</div>
-												</a>
-											</section>
-										</div>
-										<% }) %>
-
-								</div>
+								<a href="#" class="btn btn-primary col-12 card-precio"><i
+										class="fas fa-shopping-cart"></i>$<%- product.precio - product.precio * product.descuento /100 %></a>
 							</div>
-						</div>
-
-						<div class="tab-pane fade" id="videojuegos" role="tabpanel" aria-labelledby="contact-tab">
-							<div class="row selecciones">
-								<div class="col-12">
-									<h1>Amplía tus oportunidades profesionales desarrollando videos juegos
-									</h1>
-									<p>
-										Sumérgete en el mundo de desarrollo de videos juegos, de la mano de los mejores
-										profesores del pais
-
-									</p>
-								</div>
-								<h1 class="explora">Explorar <a href="/cursos/videojuegos">
-										desarrollo de video juegos
-									</a> > </h1>
-								<div class="col-12 row">
-									<% videoJuegos.cursos.forEach(product=> { %>
-										<div class="col-12 col-sm-6 col-lg-3">
-											<section class="product-box">
-												<a href="cursos/detail/<%= product.id %> ">
-													<img src="/images/cursos/<%= product.imagen %> "
-														class="card-img-top">
-													<div class="card-body ">
-														<div>
-															<h5 class="card-title ">
-																<%= product.nombre %>
-															</h5>
-														</div>
-														<div class="precio-curso ">
-															<div class="rebaja">
-																<p>65% Dto. <span class="tachado">$<%= product.precio %>
-																			ARG</span></p>
-															</div>
-															<a href="#" class="btn btn-primary col-12 card-precio"><i
-																	class="fas fa-shopping-cart"></i>$<%=
-																	product.descuento %> ARG</a>
-														</div>
-													</div>
-												</a>
-											</section>
 										</div>
-										<% }) %>
-
-								</div>
+									</a>
+								</section>
 							</div>
+							<% }) %>
 						</div>
-						<div class="tab-pane fade" id="python" role="tabpanel" aria-labelledby="contact-tab">
-							PROXIMAMENTE</div>
-						<div class="tab-pane fade" id="python" role="tabpanel" aria-labelledby="contact-tab">
-							PROXIMAMENTE</div>
 					</div>
 				</div>
+				<div class="tab-pane fade" id="javascript" role="tabpanel" aria-labelledby="profile-tab">
+					<div class="row selecciones">
+						<div class="col-12">
+							<h1>Amplía tus oportunidades profesionales con JavaScript
+							</h1>
+							<p>
+								JavaScript es uno de los lenguajes de programación más extendidos del mundo,
+								sobre todo porque es la columna vertebral de las aplicaciones web interactivas.
+								Además, JavaScript es un lenguaje estupendo para los principiantes, porque les
+								da la oportunidad de escribir un código que hace algo visual, lo que resulta
+								útil y motivador cuando estás dando los primeros pasos en la programación.
+
+							</p>
+						</div>
+						<h1 class="explora">Explorar <a href="/cursos/categoria/2">
+								JavaScript
+							</a> </h1>
+						<div class="col-12 row">
+							<% javaScript.cursos.forEach(product=> { %>
+							<div class="col-12 col-sm-6 col-lg-3">
+								<section class="product-box">
+									<a href="cursos/detail/<%= product.id %> ">
+										<img src="/images/cursos/<%= product.imagen %> " class="card-img-top">
+										<div class="card-body ">
+											<div>
+												<h5 class="card-title ">
+													<%= product.nombre %>
+												</h5>
+											</div>
+											<div class="precio-curso ">
+								<div class="rebaja">
+									<p><%- product.descuento %>% Dto. <span class="tachado">$<%- product.precio %>ARS</span></p>
+								</div>
+								<a href="#" class="btn btn-primary col-12 card-precio"><i
+										class="fas fa-shopping-cart"></i>$<%- product.precio - product.precio * product.descuento /100 %></a>
+							</div>
+										</div>
+									</a>
+								</section>
+							</div>
+							<% }) %>
+
+						</div>
+					</div>
+				</div>
+
+				<div class="tab-pane fade" id="videojuegos" role="tabpanel" aria-labelledby="contact-tab">
+					<div class="row selecciones">
+						<div class="col-12">
+							<h1>Amplía tus oportunidades profesionales desarrollando videos juegos
+							</h1>
+							<p>
+								Sumérgete en el mundo de desarrollo de videos juegos, de la mano de los mejores
+								profesores del pais
+
+							</p>
+						</div>
+						<h1 class="explora">Explorar <a href="/cursos/categoria/3">
+								Desarrollo de Video Juegos
+							</a> > </h1>
+						<div class="col-12 row">
+							<% videoJuegos.cursos.forEach(product=> { %>
+							<div class="col-12 col-sm-6 col-lg-3">
+								<section class="product-box">
+									<a href="cursos/detail/<%= product.id %> ">
+										<img src="/images/cursos/<%= product.imagen %> " class="card-img-top">
+										<div class="card-body ">
+											<div>
+												<h5 class="card-title ">
+													<%= product.nombre %>
+												</h5>
+											</div>
+											<div class="precio-curso ">
+								<div class="rebaja">
+									<p><%- product.descuento %>% Dto. <span class="tachado">$<%- product.precio %>ARS</span></p>
+								</div>
+								<a href="#" class="btn btn-primary col-12 card-precio"><i
+										class="fas fa-shopping-cart"></i>$<%- product.precio - product.precio * product.descuento /100 %></a>
+							</div>
+										</div>
+									</a>
+								</section>
+							</div>
+							<% }) %>
+
+						</div>
+					</div>
+				</div>
+				<div class="tab-pane fade" id="python" role="tabpanel" aria-labelledby="contact-tab">
+					PROXIMAMENTE</div>
+				<div class="tab-pane fade" id="python" role="tabpanel" aria-labelledby="contact-tab">
+					PROXIMAMENTE</div>
 			</div>
-			<!-- Seleccion Amplia-->
+		</div>
+	</div>
+	<!-- Seleccion Amplia-->
 
-			<!-- BANNER -->
-			<div class="container-fluid banner-2">
-				<img src="/images/segundoBannerHomeletras.png" alt="">
+	<!-- BANNER -->
+	<div class="container-fluid banner-2">
+		<img src="/images/segundoBannerHomeletras.png" alt="">
+	</div>
+	<!-- BANNER -->
+
+	<!-- CATEGORIAS PRINCIPALES -->
+	<div class="container row Categorias-principales">
+		<h1 class="categorias-principales col-12">Categorias Principales</h1>
+		<div class="col-12 col-sm-6 col-lg-3">
+			<div class="categoria">
+				<a href="/cursos/categoria/6">
+					<img src="/images/categorias/diseño-web.png" alt="">
+				</a>
+				<h1>Diseño</h1>
 			</div>
-			<!-- BANNER -->
-
-			<!-- CATEGORIAS PRINCIPALES -->
-			<div class="container row Categorias-principales">
-				<h1 class="categorias-principales col-12">Categorias Principales</h1>
-				<div class="col-12 col-sm-6 col-lg-3">
-					<div class="categoria">
-						<a href="/cursos/categoria/1">
-							<img src="/images/categorias/diseño-web.png" alt="">
-						</a>
-						<h1>Diseño</h1>
-					</div>
-				</div>
-				<div class="col-12 col-sm-6 col-lg-3">
-					<div class="categoria">
-						<a href="/cursos/categoria/2">
-							<img src="/images/categorias/arduino.png" alt="">
-						</a>
-						<h1>Javascript</h1>
-					</div>
-				</div>
-				<div class="col-12 col-sm-6 col-lg-3">
-					<div class="categoria">
-						<a href="/cursos/categoria/2">
-							<img src="/images/categorias/desarrollo.png" alt="">
-						</a>
-						<h1>Desarrollo Web</h1>
-					</div>
-				</div>
-				<div class="col-12 col-sm-6 col-lg-3">
-					<div class="categoria">
-						<a href="/cursos/categoria/2">
-							<img src="/images/categorias/emprendimiento.png" alt="">
-						</a>
-						<h1>Negocios</h1>
-					</div>
-				</div>
-				<div class="col-12 col-sm-6 col-lg-3">
-					<div class="categoria">
-						<a href="/cursos/categoria/2">
-							<img src="/images/categorias/marketing.png" alt="">
-						</a>
-						<h1>Marketing</h1>
-					</div>
-				</div>
-				<div class="col-12 col-sm-6 col-lg-3">
-					<div class="categoria">
-						<a href="/cursos/categoria/2">
-							<img src="/images/categorias/desarrollo-personal.png" alt="">
-						</a>
-						<h1>PHP</h1>
-					</div>
-				</div>
-				<div class="col-12 col-sm-6 col-lg-3">
-					<div class="categoria">
-						<a href="/cursos/categoria/2">
-							<img src="/images/categorias/juego.png" alt="">
-						</a>
-						<h1>Desarrollo de Juegos</h1>
-					</div>
-				</div>
-				<div class="col-12 col-sm-6 col-lg-3">
-					<div class="categoria">
-						<a href="/cursos/categoria/2">
-							<img src="/images/categorias/software.png" alt="">
-						</a>
-						<h1>WordPress</h1>
-					</div>
-				</div>
+		</div>
+		<div class="col-12 col-sm-6 col-lg-3">
+			<div class="categoria">
+				<a href="/cursos/categoria/2">
+					<img src="/images/categorias/arduino.png" alt="">
+				</a>
+				<h1>Javascript</h1>
 			</div>
-			<!-- CATEGORIAS PRINCIPALES -->
+		</div>
+		<div class="col-12 col-sm-6 col-lg-3">
+			<div class="categoria">
+				<a href="/cursos/categoria/1">
+					<img src="/images/categorias/desarrollo.png" alt="">
+				</a>
+				<h1>Diseño Web</h1>
+			</div>
+		</div>
+		<div class="col-12 col-sm-6 col-lg-3">
+			<div class="categoria">
+				<a href="/cursos/categoria/2">
+					<img src="/images/categorias/emprendimiento.png" alt="">
+				</a>
+				<h1>Negocios</h1>
+			</div>
+		</div>
+		<div class="col-12 col-sm-6 col-lg-3">
+			<div class="categoria">
+				<a href="/cursos/categoria/2">
+					<img src="/images/categorias/marketing.png" alt="">
+				</a>
+				<h1>Marketing</h1>
+			</div>
+		</div>
+		<div class="col-12 col-sm-6 col-lg-3">
+			<div class="categoria">
+				<a href="/cursos/categoria/2">
+					<img src="/images/categorias/desarrollo-personal.png" alt="">
+				</a>
+				<h1>PHP</h1>
+			</div>
+		</div>
+		<div class="col-12 col-sm-6 col-lg-3">
+			<div class="categoria">
+				<a href="/cursos/categoria/3">
+					<img src="/images/categorias/juego.png" alt="">
+				</a>
+				<h1>Desarrollo de Juegos</h1>
+			</div>
+		</div>
+		<div class="col-12 col-sm-6 col-lg-3">
+			<div class="categoria">
+				<a href="/cursos/categoria/2">
+					<img src="/images/categorias/software.png" alt="">
+				</a>
+				<h1>WordPress</h1>
+			</div>
+		</div>
+	</div>
+	<!-- CATEGORIAS PRINCIPALES -->
 
-			 
-			 </div>
-			<!-- FOOTER -->
-			<%- include("partials/footer.ejs") %>
-				<!-- FOOTER -->
+	 
+	 </div>
+	<!-- FOOTER -->
+	<%- include("partials/footer.ejs") %>
+	<!-- FOOTER -->
 
-	</body>
+</body>
 
 </html>
